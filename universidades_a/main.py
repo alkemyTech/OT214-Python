@@ -1,8 +1,8 @@
-a = ["julian","matias","carlos"]
+nombres = ["julian", "matias", "carlos"]
 
 
 def imprimir_nombres(nombres, apellido):
-    print(a)
+    print(nombres)
 
 
-imprimir_nombres(a)
+imprimir_nombres(nombres)
