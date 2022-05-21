@@ -22,9 +22,14 @@ class ETL():
     def __init__(self):
         self.config = {}
 
-    # public function that will be in charge of the
+    # public function that will be in charge of the Moron university's
     # extraction through data queries hosted in AWS
-    def extract(self):
+    def extract_moron(self):
+        pass
+
+    # public function that will be in charge of the Rio Cuarto university's
+    # extraction through data queries hosted in AWS
+    def extract_rc(self):
         pass
 
     # public function that will be in charge of data analysis
@@ -42,7 +47,7 @@ class ETL():
 with DAG(
     "university_f",
     default_args=default_args,
-    decription="""Dag to extract, process and load data
+    description="""Dag to extract, process and load data
                   from Moron and Rio Cuarto's Universities""",
     schedule_interval=timedelta(hours=1),
     start_date=datetime.now()
@@ -51,11 +56,15 @@ with DAG(
     etl = ETL()
 
     # declare the operators
-    sql_task = PythonOperator(task_id="extract", python_callable=etl.extract)
+    sql_task_moron = PythonOperator(task_id="extract_moron",
+                                    python_callable=etl.extract_moron)
+
+    sql_task_rc = PythonOperator(task_id="extract_rc",
+                                 python_callable=etl.extract_rc)
 
     pandas_task = PythonOperator(task_id="transform",
                                  python_callable=etl.transform)
 
     save_task = PythonOperator(task_id="load", python_callable=etl.load)
 
-    sql_task >> [pandas_task, pandas_task] >> save_task
+    [sql_task_moron, sql_task_rc] >> pandas_task >> save_task
