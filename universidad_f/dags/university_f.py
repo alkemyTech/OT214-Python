@@ -38,4 +38,22 @@ class ETL():
         pass
 
 
+# The DAG that will be in charge of managing the ETL functions
+with DAG(
+    "university_f",
+    default_args=default_args,
+    decription="""Dag to extract, process and load data
+                  from Moron and Rio Cuarto's Universities""",
+    schedule_interval=timedelta(hours=1),
+    start_date=datetime.now()
+) as dag:
+    # initialize the ETL configuration
+    etl = ETL()
 
+    # declare the operators
+    sql_task = PythonOperator(task_id="extract", python_callable=etl.extract)
+
+    pandas_task = PythonOperator(task_id="transform",
+                                 python_callable=etl.transform)
+
+    save_task = PythonOperator(task_id="load", python_callable=etl.load)
