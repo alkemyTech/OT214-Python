@@ -57,3 +57,5 @@ with DAG(
                                  python_callable=etl.transform)
 
     save_task = PythonOperator(task_id="load", python_callable=etl.load)
+
+    sql_task >> [pandas_task, pandas_task] >> save_task
