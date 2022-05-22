@@ -19,17 +19,15 @@ default_args = {
 # It will contain the functions of the dag
 class ETL():
     # will initialize configurations for the ETL
-    def __init__(self):
-        self.config = {}
+    def __init__(self, rows_file="./config/rows.yaml",
+                 columns_file="./config/columns.yaml"):
 
-    # public function that will be in charge of the Moron university's
-    # extraction through data queries hosted in AWS
-    def extract_moron(self):
-        pass
+        self.rows_config = rows_file
+        self.columns_config = columns_file
 
-    # public function that will be in charge of the Rio Cuarto university's
+    # public function that will be in charge of the
     # extraction through data queries hosted in AWS
-    def extract_rc(self):
+    def extract(self):
         pass
 
     # public function that will be in charge of data analysis
@@ -56,15 +54,18 @@ with DAG(
     etl = ETL()
 
     # declare the operators
-    sql_task_moron = PythonOperator(task_id="extract_moron",
-                                    python_callable=etl.extract_moron)
 
-    sql_task_rc = PythonOperator(task_id="extract_rc",
-                                 python_callable=etl.extract_rc)
+    # all operators will be compatible with all the universities found in
+    # the queries to be reusable in case queries are added or simply changed
+    sql_task = PythonOperator(task_id="extract",
+                              python_callable=etl.extract)
 
     pandas_task = PythonOperator(task_id="transform",
                                  python_callable=etl.transform)
 
     save_task = PythonOperator(task_id="load", python_callable=etl.load)
 
-    [sql_task_moron, sql_task_rc] >> pandas_task >> save_task
+    # the dag will allow the ETL process to be done for all
+    # the universities that have queries, are in /university_f/sql
+    # and the configuration files of their columns/rows are in ./config/
+    sql_task >> pandas_task >> save_task
