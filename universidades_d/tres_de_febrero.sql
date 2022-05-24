@@ -9,5 +9,5 @@ SELECT "names",
 		codigo_postal
 FROM palermo_tres_de_febrero
 WHERE universidad LIKE 'universidad_nacional_de_tres_de_febrero'
-AND CAST(fecha_de_inscripcion as DATE) BETWEEN CAST('01/Aug/20' as DATE) AND CAST('01/FEB/21' as DATE)
-ORDER BY CAST(fecha_de_inscripcion as DATE)
+AND CAST(fecha_de_inscripcion as DATE) BETWEEN CAST('01/Sep/20' as DATE) AND CAST('01/FEB/21' as DATE)
+ORDER BY CAST(fecha_de_inscripcion as DATE) 
