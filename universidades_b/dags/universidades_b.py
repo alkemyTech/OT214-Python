@@ -6,7 +6,7 @@ from airflow.utils.dates import days_ago
 
 
 # Define ETL functions:
-# Here will be the extract function, which will get information 
+# Here will be the extract function, which will get information
 # needed about Comahue and Salvador Universities by sql queries
 def extract():
     pass
