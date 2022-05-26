@@ -20,19 +20,19 @@ with DAG(
 
 #function of connection and db queries
     def conn_query():
-        print('##########  generate a connection whith db')
-        print('##########  national university of la pampa querie')
-        print('##########  inter-american open university querie')
+        print('generate a connection whith db')
+        print('national university of la pampa querie')
+        print('inter-american open university querie')
 
 
 #process data function
     def proccess():
-        print('#########  process data whith pandas')
+        print('process data whith pandas')
 
 
 #function to send data process to s3
     def send():
-        print('##########   send of panda processed info to a3 server')
+        print('send of panda processed info to a3 server')
 
 
 #pythonoperator for function of connect and queries
