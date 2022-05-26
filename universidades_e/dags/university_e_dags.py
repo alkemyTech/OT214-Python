@@ -1,14 +1,11 @@
-from datetime import datetime
-
 from airflow import DAG
-from airflow.utils.dates import days_ago
 from airflow.operators.python_operator import PythonOperator
-
+from airflow.utils.dates import days_ago
 
 #dag default arguments
 default_arguments = {
-    'owner':'Maxi Cabrera',
-    'start_date':days_ago(1)
+    'owner' : 'Maxi Cabrera',
+    'start_date' : days_ago(1)
 }
 
 
@@ -39,7 +36,7 @@ with DAG(
 
 
 #pythonoperator for function of connect and queries
-    python_task1=PythonOperator(
+    python_task1 = PythonOperator(
         task_id="connect_queries",
         python_callable=conn_query,
 
@@ -47,19 +44,19 @@ with DAG(
 
 
 #pythonoperator for function to process data
-    python_task2=PythonOperator(
+    python_task2 = PythonOperator(
         task_id="process",
         python_callable=proccess,
-    
+
     )
 
 
 #pythonoperator for function to send data to s3
-    python_task3=PythonOperator(
+    python_task3 = PythonOperator(
         task_id="send_to_up_cloud",
         python_callable=send,
-    
+
     )
 
-python_task1>>python_task2>>python_task3
+python_task1 >> python_task2 >> python_task3
 
