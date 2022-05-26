@@ -1,10 +1,9 @@
+from datetime import datetime, timedelta
+from os import getenv
 
 import psycopg2
-from datetime import timedelta, datetime
-
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from os import getenv
 from dotenv import load_dotenv
 
 # Set args
