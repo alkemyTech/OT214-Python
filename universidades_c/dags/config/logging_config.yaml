@@ -1,0 +1,28 @@
+version: 1
+disable_existing_loggers: true
+
+formatters:
+    standard:
+        class: logging.Formatter
+        style:  "%"
+        datefmt: "%d-%b-%y"
+        format: "%(asctime)s - %(name)s - %(message)s"
+
+handlers:
+    info_file_handler:
+        class: logging.FileHandler
+        level: INFO
+        filename: /OT214-Python/universidades_c/dags/main.log
+        formatter: standard
+        encoding: utf8
+
+root:
+    level: INFO
+    handlers: [info_file_handler]
+
+loggers:
+    sampleLogger:
+        level: INFO
+        handlers: [info_file_handler]
+        formatter: standard
+        propogate: no
