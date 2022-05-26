@@ -1,9 +1,8 @@
 from datetime import datetime, timedelta
 
-from decouple import config
-
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
+from decouple import config
 from sqlalchemy import create_engine
 
 # DAG default arguments dictionary, running hourly with 5 retries
