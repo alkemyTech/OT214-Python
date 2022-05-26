@@ -1,4 +1,5 @@
 import logging.config
+
 import yaml
 
 with open("./config/logger.yaml") as logger_config:
