@@ -1,8 +1,8 @@
 import os
+from datetime import datetime, timedelta
 
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 
