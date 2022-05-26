@@ -1,11 +1,11 @@
-import os
-import psycopg2
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from sqlalchemy import create_engine
+
+import os
 
 # [END import_module]
 
@@ -27,12 +27,12 @@ default_args = {
 # credentials for establish a database connection
 def get_connection_credentials():
     load_dotenv()
-    _PG_USER = os.getenv('_PG_USER')
-    _PG_PASSWD = os.getenv('_PG_PASSWD')
-    _PG_HOST = os.getenv('_PG_HOST')
-    _PG_PORT = os.getenv('_PG_PORT')
-    _PG_DB = os.getenv('_PG_DB')
-    return f'postgresql://{_PG_USER}:{_PG_PASSWD}@{_PG_HOST}:{_PG_PORT}/{_PG_DB}'
+    pg_user = os.getenv('_PG_USER')
+    pg_passwd = os.getenv('_PG_PASSWD')
+    pg_host = os.getenv('_PG_HOST')
+    pg_port = os.getenv('_PG_PORT')
+    pg_db = os.getenv('_PG_DB')
+    return f'postgresql://{pg_user}:{pg_passwd}@{pg_host}:{pg_port}/{pg_db}'
 
 
 # [END default_args]
