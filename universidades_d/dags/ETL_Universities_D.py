@@ -1,9 +1,14 @@
+import os
+
 from dotenv import load_dotenv
+
 from datetime import datetime, timedelta
+
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+
 from sqlalchemy import create_engine
-import os
+
 
 # [END import_module]
 
