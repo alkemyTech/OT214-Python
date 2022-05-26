@@ -1,9 +1,11 @@
-from datetime import datetime, timedelta
+import os
+
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
-import os
+
 # [END import_module]
 
 # [START default_args]
