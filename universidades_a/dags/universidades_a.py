@@ -3,10 +3,16 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.dummy import DummyOperator
 
+default_args = {
+    'owner': 'alkymer',
+    'depends_on_past': False
+}
+
 # Initialization of the DAG for the etl process for universidades_a
 with DAG(
     'ETL_universidades_a',
     description='ETL DAG for Universidad de Flores and Villa Maria',
+    detault_args=default_args,
     schedule_interval=timedelta(hours=1),
     start_date=datetime.now(),
 ) as dag:
