@@ -1,5 +1,7 @@
 from datetime import datetime, timedelta
 
+from decouple import config
+
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from sqlalchemy import create_engine
@@ -17,11 +19,11 @@ default_args = {
 # Source DataBase properties dictionary to be injected as **kwargs
 # on create_connection funct.
 db_args = {
-    'user': 'alkymer',
-    'passwd': 'alkymer123',
-    'host': 'training-main.cghe7e6sfljt.us-east-1.rds.amazonaws.com',
-    'port': '5432',
-    'db': 'training'
+    'user': config('_PG_USER'),
+    'passwd': config('_PG_PASSWD'),
+    'host': config('_PG_HOST'),
+    'port': config('_PG_PORT'),
+    'db': config('_PG_DB')
 }
 
 
