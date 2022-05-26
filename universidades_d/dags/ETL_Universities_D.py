@@ -1,6 +1,5 @@
-from datetime import datetime, timedelta
-
 from sqlalchemy import create_engine
+from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from dotenv import load_dotenv
