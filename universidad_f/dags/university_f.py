@@ -22,11 +22,11 @@ class ETL():
         return True
 
     def extract(self):
-        engine = create_engine("postgresql://" + config("USER") +
-                               ":" + config("PASSWORD") +
-                               "@" + config("HOST") +
-                               ":" + config("PORT") +
-                               "/" + config("DATABASE"))
+        engine = create_engine("postgresql://" + config("_PG_USER") +
+                               ":" + config("_PG_PASSWD") +
+                               "@" + config("_PG_HOST") +
+                               ":" + config("_PG_PORT") +
+                               "/" + config("_PG_DB"))
 
         if not self._database_status(engine):
             raise ValueError("Database doesn't exists")
