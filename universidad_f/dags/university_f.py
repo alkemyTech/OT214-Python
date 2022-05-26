@@ -1,9 +1,8 @@
 from datetime import timedelta
 
+from decouple import config
 from sqlalchemy import create_engine
 from sqlalchemy_utils import database_exists
-
-from decouple import config
 
 default_args = {
     "owner": "alkymer",
