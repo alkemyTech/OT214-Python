@@ -1,37 +1,69 @@
 from datetime import datetime, timedelta
 
 from airflow import DAG
-from airflow.operators.dummy import DummyOperator
+from airflow.operators.python_operator import PythonOperator
 
 default_args = {
     'owner': 'alkymer',
     'depends_on_past': False
 }
 
+
+def extract_sql():
+
+    # function that will extract data with SQL querys
+    pass
+
+
+def transform_data():
+
+    # function that will process data with Pandas
+    pass
+
+
+def load_data_flores():
+
+    # function that will upload to S3 universidad de flores transform data
+    pass
+
+
+def load_data_villamaria():
+
+    # function that will upload to S3 universida de Villa Maria transform data
+    pass
+
+
 # Initialization of the DAG for the etl process for universidades_a
 with DAG(
     'ETL_universidades_a',
     description='ETL DAG for Universidad de Flores and Villa Maria',
-    detault_args=default_args,
+    default_args=default_args,
     schedule_interval=timedelta(hours=1),
     start_date=datetime.now(),
 ) as dag:
 
-    # Operator that will extract universidad de Flores data with SQL query
-    extract_flores = DummyOperator(task_id='extract_SQLquery_flores')
+    # Operator that will extract data with SQL querys
+    extract = PythonOperator(
+        task_id='extract_sql_task',
+        python_callable=extract_sql
+        )
 
-    # Operator that will extract universidad de Villa Maria data with SQL query
-    extract_villa_maria = DummyOperator(task_id='extract_SQLquery_villa_maria')
+    # Operator that will process data with Pandas
+    transform = PythonOperator(
+        task_id='transform_data_task',
+        python_callable=transform_data
+        )
 
-    # Operator that will process universidad de Flores data with Pandas
-    transform_flores = DummyOperator(task_id='transform_pandas_flores')
+    # Operator that will upload to S3 universidad de flores transform data
+    load_flores = PythonOperator(
+        task_id='load_data_flores_task',
+        python_callable=load_data_flores
+        )
 
-    # Operator that will process universidad de Villa Maria data with Pandas
-    transform_villa_maria = DummyOperator(
-        task_id='transform_pandas_villa_maria')
+    # Operator that will upload to S3 universida de Villa Maria transform data
+    load_villamaria = PythonOperator(
+        task_id='load_data_villamaria_task',
+        python_callable=load_data_villamaria
+        )
 
-    # Operator that will upload to S3 universidades_a transform data
-    load_universidades_a = DummyOperator(task_id='load_S3_universidades_a')
-
-    extract_flores >> transform_flores >> load_universidades_a
-    extract_villa_maria >> transform_villa_maria >> load_universidades_a
+    extract >> transform >> [load_flores, load_villamaria]
