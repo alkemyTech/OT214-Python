@@ -19,11 +19,11 @@ default_args = {
 def connect_database():
     load_dotenv()
     conexion = psycopg2.connect(
-        user=getenv('DB_USERNAME'),
-        password=getenv('DB_PASSWORD'),
-        host=getenv('DB_HOST'),
-        port=getenv('DB_PORT'),
-        database=getenv('DB_DATABASE'))
+        user=getenv('_PG_USER'),
+        password=getenv('_PG_PASSWD'),
+        host=getenv('_PG_HOST'),
+        port=getenv('_PG_PORT'),
+        database=getenv('_PG_DB'))
 
     cursor = conexion.cursor()
 
