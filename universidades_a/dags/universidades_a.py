@@ -32,8 +32,10 @@ def extract_sql():
         logging.info("Database connection success")
 
     try:
-        filepath_flores = Path('airflow/sql/flores.sql')
-        filepath_villamaria = Path('airflow/sql/villaMaria.sql')
+        filepath_flores = Path(
+            'airflow/universidades_a/sql/flores.sql')
+        filepath_villamaria = Path(
+            'airflow/universidades_a/sql/villaMaria.sql')
         with open(filepath_flores, 'r', encoding="utf-8") as file:
             query_flores = file.read()
         with open(filepath_villamaria, 'r', encoding="utf-8") as file:
@@ -47,10 +49,10 @@ def extract_sql():
 
     try:
         filepath_flores_csv = Path(
-            'airflow/dags/files/universidad_flores.csv')
+            'airflow/universidades_a/dags/files/universidad_flores.csv')
         filepath_flores_csv.parent.mkdir(parents=True, exist_ok=True)
         filepath_villamaria_csv = Path(
-            'airflow/dags/files/universidad_villamaria.csv')
+            'airflow/universidades_a/dags/files/universidad_villamaria.csv')
         filepath_villamaria_csv.parent.mkdir(parents=True, exist_ok=True)
         df_flores.to_csv(filepath_flores_csv, index=False)
         df_villamaria.to_csv(filepath_villamaria_csv, index=False)
