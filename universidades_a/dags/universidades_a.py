@@ -8,6 +8,10 @@ from sqlalchemy.exc import SQLAlchemyError
 
 
 def extract_sql():
+    '''
+    Universities Data is extracted from the database with the saved queries.
+    This Data is saved in a csv file corresponding to each universities
+    '''
 
     try:
         engine = create_engine(
@@ -28,8 +32,8 @@ def extract_sql():
         logging.info("Database connection success")
 
     try:
-        filepath_flores = Path('../sql/flores.sql')
-        filepath_villamaria = Path('../sql/villaMaria.sql')
+        filepath_flores = Path('airflow/sql/flores.sql')
+        filepath_villamaria = Path('airflow/sql/villaMaria.sql')
         with open(filepath_flores, 'r', encoding="utf-8") as file:
             query_flores = file.read()
         with open(filepath_villamaria, 'r', encoding="utf-8") as file:
@@ -37,14 +41,16 @@ def extract_sql():
         df_flores = pd.read_sql(query_flores, engine)
         df_villamaria = pd.read_sql(query_villamaria, engine)
     except IOError:
-        logging.error("SQL file not appear to exist")
+        logging.error("SQL file not appear or exist")
     else:
         logging.info("SQL query reading success")
 
     try:
-        filepath_flores_csv = Path('files/universidad_flores.csv')
+        filepath_flores_csv = Path(
+            'airflow/dags/files/universidad_flores.csv')
         filepath_flores_csv.parent.mkdir(parents=True, exist_ok=True)
-        filepath_villamaria_csv = Path('files/universidad_villamaria.csv')
+        filepath_villamaria_csv = Path(
+            'airflow/dags/files/universidad_villamaria.csv')
         filepath_villamaria_csv.parent.mkdir(parents=True, exist_ok=True)
         df_flores.to_csv(filepath_flores_csv, index=False)
         df_villamaria.to_csv(filepath_villamaria_csv, index=False)
