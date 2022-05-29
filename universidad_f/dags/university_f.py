@@ -1,15 +1,12 @@
 import os
 from datetime import datetime, timedelta
 
+import pandas as pd
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-
-import pandas as pd
+from config_logger import get_logger
 from decouple import config
 from sqlalchemy import create_engine
-
-from config_logger import get_logger
-
 
 default_args = {
     "owner": "alkymer",
