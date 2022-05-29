@@ -1,17 +1,14 @@
-from email.policy import default
 import os
-from datetime import timedelta
+from datetime import datetime, timedelta
 
-from psycopg2 import connect
+from airflow import DAG
+from airflow.operators.python import PythonOperator
 
+import pandas as pd
 from decouple import config
 from sqlalchemy import create_engine
-from sqlalchemy_utils import database_exists
-import pandas as pd
-import logging
-import logging.config
-import yaml
 
+from config_logger import get_logger
 
 
 default_args = {
@@ -26,13 +23,20 @@ default_args = {
 
 
 class ETL():
-    def __init__(self, sql_paths="../sql/", csv_paths="../data/"):
-        logger.info("Starting ETL process.")
-        self.query_path = sql_paths
-        self.data_path = csv_paths
+    def load(self):
+        self.logger.info("Stating load process.")
+
+    def transform(self):
+        self.logger.info("Starting transform process")
+
+    def _delete_exists(self, r):
+        self.logger.info("Deleting data used.")
+
+        for k, v in r.items():
+            os.remove(self.data_path + k + ".csv")
 
     def _create_engine(self):
-        logger.info("Getting URI from .env")
+        self.logger.info("Getting URI from .env")
         try:
             self.engine = create_engine("postgresql://" + config("_PG_USER") +
                                         ":" + config("_PG_PASSWD") +
@@ -40,76 +44,106 @@ class ETL():
                                         ":" + config("_PG_PORT") +
                                         "/" + config("_PG_DB"))
         except Exception as e:
-            logger.warning("""Error connecting to database,
-                            check .env file \n""" + str(e))
+            self.logger.warning("Error connecting to database, check .env file"
+                                + "\n" + str(e))
 
     def _save_csv(self, r):
+        self.logger.info("Saving data.csv files.")
+
         try:
             if not os.path.exists(self.data_path):
                 os.mkdir(self.data_path)
         except Exception as e:
-            logger.warning("Error creating ./data/ path \n" + str(e))
+            self.logger.warning("Error creating ./data/ path \n" + str(e))
 
         try:
             for k, v in r.items():
                 v.to_csv(self.data_path + k + ".csv")
         except Exception as e:
-            logger.warning("Error saving data.csv \n" + str(e))
+            self.logger.warning("Error saving data.csv \n" + str(e))
 
     def _database_status(self, engine):
-        logger.info("Checking database status")
+        self.logger.info("Checking database status.")
 
         try:
             if not bool(engine):
-                raise ValueError("Database doesn't exists")
+                raise ValueError("Database doesn't exists.")
             return
         except Exception as e:
-            logger.warning("""Error connecting to database,
-                        check .env file \n""" + str(e))
+            self.logger.warning("Error connecting to database, check .env file"
+                                + "\n" + str(e))
 
     def _make_query(self):
+        self.logger.info("Executing query.")
+
         result = {}
 
-        with self.connection as conn:
-            for i in os.listdir(self.query_path):
-                with open(self.query_path + i) as sql_file:
-                    query = sql_file.read()
-                    result[i] = pd.read_sql(query, conn)
-
+        try:
+            with self.connection as conn:
+                for i in os.listdir(self.query_path):
+                    with open(self.query_path + i) as sql_file:
+                        query = sql_file.read()
+                        result[i] = pd.read_sql(query, conn)
+        except Exception as e:
+            self.logger.warning("Error executing queries \n" + str(e))
         return result
 
     def extract(self):
-        logger.info("Extracting data.")
-
-        self._create_engine()
-
-        logger.info("Connecting database")
-        self.connection = self.engine.connect()
-
-        self._database_status(self.connection)
-
-        r = self._make_query()
-
-        self._save_csv(r)
-
-
-if __name__ == "__main__":
-    with open("./config/logger.yaml") as logger_config:
+        self.logger.info("Extracting data.")
         try:
-            log_config = yaml.safe_load(logger_config.read())
-            logging.config.dictConfig(log_config)
+            self._create_engine()
+
+            self.logger.info("Connecting database.")
+            self.connection = self.engine.connect()
+
+            self._database_status(self.connection)
+
+            r = self._make_query()
+
+            if len(r) == 0:
+                self.logger.warning("Queries not found.")
+                return
+
+            self._delete_exists(r)
+
+            self._save_csv(r)
         except Exception as e:
-            logging.info("Error loading logger configuration \n" + str(e))
-            print(str(e))
-    
-        finally:
-            logger_config.close()
+            self.logger.error(str(e))
+            self.logger.error("Error founded, stopping...")
 
-    logger = logging.getLogger("dev")
-    logger.handlers
+    def __init__(self, sql_paths="../sql/",
+                 csv_paths="../data/", logger_config="dev"):
+        self.logger = get_logger(logger_config)
 
+        self.logger.info("Starting ETL process.")
+        self.query_path = sql_paths
+        self.data_path = csv_paths
+
+
+with DAG(
+    "university_f",
+    default_args=default_args,
+    description="""Dag to extract, process and load data
+                  from Moron and Rio Cuarto's Universities""",
+    schedule_interval=timedelta(hours=1),
+    start_date=datetime.now()
+) as dag:
+    # initialize the ETL configuration
     etl = ETL()
 
-    etl.extract()
+    # declare the operators
 
-    
+    # all operators will be compatible with all the universities found in
+    # the queries to be reusable in case queries are added or simply changed
+    sql_task = PythonOperator(task_id="extract",
+                              python_callable=etl.extract)
+
+    pandas_task = PythonOperator(task_id="transform",
+                                 python_callable=etl.transform)
+
+    save_task = PythonOperator(task_id="load", python_callable=etl.load)
+
+    # the dag will allow the ETL process to be done for all
+    # the universities that have queries, are in /university_f/sql
+    # and the configuration files of their columns/rows are in ./config/
+    sql_task >> pandas_task >> save_task
