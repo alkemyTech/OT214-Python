@@ -109,7 +109,7 @@ class ETL():
             self.logger.error("Error founded, stopping...")
 
     def __init__(self, sql_paths="../sql/",
-                 csv_paths="../data/", logger_config="dev"):
+                 csv_paths="../files/", logger_config="dev"):
         self.logger = get_logger(logger_config)
 
         self.logger.info("Starting ETL process.")
