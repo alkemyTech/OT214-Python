@@ -1,0 +1,25 @@
+version: 1
+disable_existing_loggers: true
+
+formatters:
+    standard:
+        datefmt: "%Y-%m-%d"
+        format: "%(asctime)s - %(name)s - %(message)s"
+
+handlers:
+    console:
+        class: logging.FileHandler
+        level: INFO
+        filename: ./airflow/dags/main.log
+        formatter: standard
+
+loggers:
+    simpleExample:
+        level: INFO
+        handlers: [console]
+        formatter: standard
+        propagate: no
+  
+root:
+    level: INFO
+    handlers: [console]
