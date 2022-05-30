@@ -19,7 +19,7 @@ loggers:
         handlers: [console]
         formatter: standard
         propagate: no
-  
+
 root:
     level: INFO
     handlers: [console]
