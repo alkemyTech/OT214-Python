@@ -6,7 +6,8 @@ SELECT
 	sexo,
 	fechas_nacimiento,
 	direcciones,
-	email 
+	email,
+	localidad 
 FROM 
 	rio_cuarto_interamericana 
 WHERE 
