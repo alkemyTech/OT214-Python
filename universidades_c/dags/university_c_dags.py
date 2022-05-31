@@ -1,15 +1,15 @@
-from datetime import datetime, timedelta, date
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 from decouple import config
-from logging_config import logging_configuration
-from pandas_processing_dicts import jujuy_columns, palermo_columns
 from sqlalchemy import create_engine
-
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
+
+from logging_config import logging_configuration
+from pandas_processing_dicts import jujuy_columns, palermo_columns
 
 # DAG default arguments dictionary, running hourly with 5 retries.
 default_args = {
