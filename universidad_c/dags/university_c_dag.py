@@ -47,10 +47,12 @@ with DAG(
             task_id='transform_data',
             python_callable=transform_data
     )
+
     # PythonOperator to execute the upload_data function.
     opr_upload_data = PythonOperator(
             task_id='upload_data',
             python_callable=upload_data
     )
+
     opr_extract_data >> opr_transform_data >> opr_upload_data
-    
+
