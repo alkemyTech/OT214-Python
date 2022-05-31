@@ -52,6 +52,5 @@ with DAG(
             task_id='upload_data',
             python_callable=upload_data
     )
-
     opr_extract_data >> opr_transform_data >> opr_upload_data
     
