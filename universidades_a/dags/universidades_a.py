@@ -39,7 +39,7 @@ with DAG(
     description='ETL DAG for Universidad de Flores and Villa Maria',
     default_args=default_args,
     schedule_interval=timedelta(hours=1),
-    start_date=datetime.now(),
+    start_date=datetime(2022, 5, 31)
 ) as dag:
 
     # Operator that will extract data with SQL querys
