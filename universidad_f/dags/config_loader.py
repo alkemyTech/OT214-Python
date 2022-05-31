@@ -15,7 +15,7 @@ def get_logger(logger="dev"):
             finally:
                 logger_config.close()
     except Exception as e:
-        logging.info("Error, logger's file configuration not found \n" + 
+        logging.info("Error, logger's file configuration not found \n" +
                      str(e))
         logging.basicConfig(level=logging.INFO)
 
