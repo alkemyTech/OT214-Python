@@ -1,5 +1,8 @@
-
 from datetime import datetime, timedelta
+
+from decouple import config
+from sqlalchemy import create_engine
+from sqlalchemy_utils import database_exists
 
 from airflow import DAG
 from airflow.operators.python import PythonOperator
@@ -8,11 +11,10 @@ from airflow.operators.python import PythonOperator
 default_args = {
     "owner": "alkymer",
     "depends_on_past": False,
-    "email": ["example@example.com"],
     "email_on_failure": False,
     "email_on_retry": False,
     "retries": 5,
-    "retry_delay": timedelta(hours=1)
+    "retry_delay": timedelta(minutes=5)
 }
 
 
@@ -25,10 +27,22 @@ class ETL():
         self.rows_config = rows_file
         self.columns_config = columns_file
 
+    def _database_status(self, engine):
+        if not database_exists(engine) or not bool(engine):
+            return False
+        return True
+
     # public function that will be in charge of the
     # extraction through data queries hosted in AWS
     def extract(self):
-        pass
+        engine = create_engine("postgresql://" + config("_PG_USER") +
+                               ":" + config("_PG_PASSWD") +
+                               "@" + config("_PG_HOST") +
+                               ":" + config("_PG_PORT") +
+                               "/" + config("_PG_DB"))
+
+        if not self._database_status(engine):
+            raise ValueError("Database doesn't exists")
 
     # public function that will be in charge of data analysis
     # using pandas of raw data extracted from the database
