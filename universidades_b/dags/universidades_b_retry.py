@@ -34,7 +34,7 @@ def connect_database():
 # Create DAG to connect to the database
 with DAG(
     'connect_b',
-    start_date=datetime.today(),
+    start_date=datetime(2022, 5, 1),
     description='DAG to connect to database with 5 retries',
     default_args=default_args,
 
