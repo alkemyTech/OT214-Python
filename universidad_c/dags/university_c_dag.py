@@ -5,8 +5,7 @@ from airflow.operators.python_operator import PythonOperator
 
 # DAG default arguments dictionary, running hourly with 5 retries.
 default_args = {
-    'owner': 'alkimer',
-    'schedule_interval': '@hourly',
+    'owner': 'alkimer',    
     'retries': 5,
     'retry_delay': timedelta(seconds=30),
     'tags': '[aceleracion]'
@@ -31,9 +30,10 @@ def upload_data():
 # DAG to execute the ETL on schedule. Dict with default_args injected.
 with DAG(
     'university_C',
-    start_date=datetime.today(),
+    start_date=datetime(2022, 5, 30)
     description='ETL for universities: Palermo, Jujuy',
     default_args=default_args,
+    schedule_interval: '@hourly',
 ) as dag:
 
     # PythonOperator to execute the extract_data function.
