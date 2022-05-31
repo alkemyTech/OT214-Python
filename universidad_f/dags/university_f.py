@@ -1,11 +1,12 @@
 
+import os
 from datetime import datetime, timedelta
 
+import pandas as pd
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+
 from config_logger import get_logger
-import pandas as pd
-import os
 
 # Arguments to be used by the dag by default
 default_args = {
