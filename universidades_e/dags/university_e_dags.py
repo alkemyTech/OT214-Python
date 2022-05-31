@@ -1,17 +1,19 @@
+from datetime import datetime
+
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-from airflow.utils.dates import days_ago
 
 # dag default arguments
 default_arguments = {
     'owner': 'Maxi Cabrera',
-    'start_date': days_ago(1)
+    'start_date': datetime(2022, 5, 1, 00, 00),
+    'description': "dag etl proccesed information to universitys",
 }
 
 
 # dag start run every hour
 with DAG(
-    dag_id='create_dag_structure',
+    dag_id='university_e',
     schedule_interval='@hourly',
     catchup=False,
     default_args=default_arguments,
@@ -32,21 +34,21 @@ with DAG(
         print('send of panda processed info to a3 server')
 
     # pythonoperator for function of connect and queries
-    python_task1 = PythonOperator(
+    python_connect = PythonOperator(
         task_id="connect_queries",
         python_callable=conn_query,
     )
 
     # pythonoperator for function to process data
-    python_task2 = PythonOperator(
+    python_process = PythonOperator(
         task_id="process",
         python_callable=proccess,
     )
 
     # pythonoperator for function to send data to s3
-    python_task3 = PythonOperator(
+    python_send = PythonOperator(
         task_id="send_to_up_cloud",
         python_callable=send,
     )
 
-python_task1 >> python_task2 >> python_task3
+    python_connect >> python_process >> python_send
