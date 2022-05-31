@@ -79,7 +79,7 @@ with DAG(
         default_args=default_args,
         description='ETL DAG for University D data',
         schedule_interval=timedelta(hours=1),
-        start_date=datetime.today(),
+        start_date=datetime(2022, 1, 1),
 
 ) as dag:
     # [END instantiate_dag]
