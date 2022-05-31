@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import pandas as pd
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from config_logger import get_logger
+from config_loader import get_logger
 from decouple import config
 from sqlalchemy import create_engine
 
