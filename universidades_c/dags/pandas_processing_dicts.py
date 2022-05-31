@@ -10,3 +10,14 @@ palermo_columns = {
                     'direcciones': 'location',
                     'correos_electronicos': 'email'
 }
+
+jujuy_columns = {
+                    'university': 'university',
+                    'career': 'career',
+                    'inscription_date': 'inscription_date',
+                    'sexo': 'gender',
+                    'birth_date': 'age',
+                    'direccion': 'location',
+                    'email': 'email',
+                    'codigo_postal': 'postal_code'
+}

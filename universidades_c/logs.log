@@ -2110,3 +2110,13 @@
 31-May-22 - __name__ - Starting data transformation.
 31-May-22 - __name__ - jujuy.csv file read successfuly.
 31-May-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+31-May-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+31-May-22 - __name__ - Conected to DataBase PostgreSQL
+31-May-22 - __name__ - File for university Palermo created and written.
+31-May-22 - __name__ - File for university Jujuy created and written.
+31-May-22 - __name__ - Starting data transformation.
+31-May-22 - __name__ - .csv file read successfuly.
+31-May-22 - __name__ - Data for Universidad Palermo written to .txt file.
+31-May-22 - __name__ - Starting data transformation.
+31-May-22 - __name__ - jujuy.csv file read successfuly.
+31-May-22 - __name__ - Data for Universidad Jujuy written to .txt file.
