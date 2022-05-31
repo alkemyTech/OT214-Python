@@ -33,7 +33,7 @@ with DAG(
     start_date=datetime(2022, 5, 30)
     description='ETL for universities: Palermo, Jujuy',
     default_args=default_args,
-    schedule_interval='@hourly',
+    schedule_interval='@hourly'
 ) as dag:
 
     # PythonOperator to execute the extract_data function.
