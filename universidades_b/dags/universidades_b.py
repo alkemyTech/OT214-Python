@@ -1,8 +1,7 @@
-from datetime import timedelta
+from datetime import datetime, timedelta
 
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from airflow.utils.dates import days_ago
 
 
 # Define ETL functions:
@@ -12,7 +11,8 @@ def extract():
     pass
 
 
-# Here will be the transform function, which will do data processing with pandas
+# Here will be the transform function, which will do data
+# processing with pandas
 def process():
     pass
 
@@ -27,7 +27,7 @@ with DAG(
     'universidades_b',
     description='DAG performing ETL for B universities - Salvador and Comahue',
     schedule_interval=timedelta(hours=1),
-    start_date=days_ago(1)
+    start_date=datetime(2022, 5, 1)
 ) as dag:
 
     # PythonOperator will execute setted functions
