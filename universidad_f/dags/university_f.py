@@ -1,9 +1,4 @@
-import logging.config
+from config_loader import get_logger
 
-import yaml
 
-with open("./config/logger.yaml") as logger_config:
-    config = yaml.safe_load(logger_config, Loader=yaml.FullLoader)
-    logging.config.dictConfig(config)
-
-    logger_config.close()
+logger = get_logger()
