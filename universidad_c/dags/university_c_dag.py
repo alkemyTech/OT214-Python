@@ -5,7 +5,7 @@ from airflow.operators.python_operator import PythonOperator
 
 # DAG default arguments dictionary, running hourly with 5 retries.
 default_args = {
-    'owner': 'alkimer',    
+    'owner': 'alkimer',
     'retries': 5,
     'retry_delay': timedelta(seconds=30),
     'tags': '[aceleracion]'
@@ -39,18 +39,19 @@ with DAG(
     # PythonOperator to execute the extract_data function.
     opr_extract_data = PythonOperator(
             task_id='extract_data',
-            python_callable=extract_data,
+            python_callable=extract_data
     )
 
     # PythonOperator to execute the transform_data function.
     opr_transform_data = PythonOperator(
             task_id='transform_data',
-            python_callable=transform_data,
+            python_callable=transform_data
     )
     # PythonOperator to execute the upload_data function.
     opr_upload_data = PythonOperator(
             task_id='upload_data',
-            python_callable=upload_data,
+            python_callable=upload_data
     )
 
     opr_extract_data >> opr_transform_data >> opr_upload_data
+    
