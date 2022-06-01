@@ -5,19 +5,10 @@ from datetime import datetime, timedelta
 import pandas as pd
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-
-from config_logger import get_logger
+from config_loader import get_dataframe_config, get_logger
 
 # Arguments to be used by the dag by default
-default_args = {
-    "owner": "alkymer",
-    "depends_on_past": False,
-    "email": ["example@example.com"],
-    "email_on_failure": False,
-    "email_on_retry": False,
-    "retries": 5,
-    "retry_delay": timedelta(hours=1)
-}
+default_args = {}
 
 
 # It will contain the functions of the dag
@@ -27,7 +18,8 @@ class ETL():
                  csv_paths="../files/",
                  logger_config="dev",
                  utils_paths="../utils/"):
-        self.logger = get_logger(logger_config)
+        self.logger = get_logger(logger_file="logger.yaml",
+                                 logger=logger_config)
 
         self.logger.info("Starting ETL process.")
         self.query_path = sql_paths
@@ -40,13 +32,20 @@ class ETL():
         pass
 
     def _save_txt(self, df):
-        df.to_csv("../data/universities_f.txt", sep=';')
+        self.logger.info("Saving data to txt.")
+
+        d_path = "../data/"
+
+        if not os.path.exists(d_path):
+            os.mkdir(d_path)
+
+        df.to_csv(d_path + "universities_f.txt", sep=';')
 
     def _append_dataframe(self, df_r):
         df = pd.DataFrame()
 
         for i in df_r:
-            df = df.append(i, ignore_index = True)
+            df = df.append(i)
 
         return df
 
@@ -83,6 +82,8 @@ class ETL():
         self.logger.info("Getting age.")
         df[age_column] = ((datetime.now() - df[birthday_column]) / 365).dt.days
 
+        df[age_column] = df[age_column].astype("int")
+
         return df
 
     def _get_gender(self, df, gender_column="gender"):
@@ -105,7 +106,6 @@ class ETL():
         return df
 
     def _clean_rows(self, x, s_letters, g_letters):
-        #self.logger.info("Translatings letters.")
         s_dictionary = x.maketrans(s_letters, g_letters)
         x = x.translate(s_dictionary)
 
@@ -172,50 +172,17 @@ class ETL():
 
         df_new = []
 
-        columns = {"names": "name",
-                   "sexo": "gender",
-                   "eemail": "email",
-                   "nombrre": "name",
-                   "carrera": "carrer",
-                   "carrerra": "carrer",
-                   "direccion": "address",
-                   "localidad": "location",
-                   "nacimiento": "birthday",
-                   "direcciones": "address",
-                   "universidad": "university",
-                   "codgoposstal": "postal_code",
-                   "univiersities": "university",
-                   "fechas_nacimiento": "birthday",
-                   "fechaiscripccion": "inscription_date",
-                   "inscription_dates": "inscription_date"}
-
-        change_type = {"age": "int",
-                       "postal_code": "str",
-                       "birthday": "datetime",
-                       "inscription_date": "datetime"}
+        df_config = get_dataframe_config()
 
         for df in df_r:
-            df = self._make_columns(df, columns)
-            df = self._clear_rows(df, clear_columns=["name",
-                                                     "email",
-                                                     "carrer",
-                                                     "location",
-                                                     "university"],
-                                  change_type=change_type)
+            df = self._make_columns(df, df_config["columns"])
+            df = self._clear_rows(df, df_config["clear_columns"],
+                                  change_type=df_config["change_type"])
             df = self._make_name(df)
             df = self._get_gender(df)
             df = self._get_age(df)
             df = self._postal_code_location(df)
-            df = self._get_columns(df, columns=["age",
-                                                "email",
-                                                'gender',
-                                                "carrer",
-                                                'location',
-                                                "last_name",
-                                                "first_name",
-                                                "university",
-                                                "postal_code",
-                                                "inscription_date"])
+            df = self._get_columns(df, df_config["final_columns"])
             df_new.append(df)
 
         df = self._append_dataframe(df_new)
