@@ -3,9 +3,12 @@ from datetime import datetime, timedelta
 from decouple import config
 from sqlalchemy import create_engine
 from sqlalchemy_utils import database_exists
-
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+
+from config_loader import get_logger
+
+logger = get_logger()
 
 # Arguments to be used by the dag by default
 default_args = {
