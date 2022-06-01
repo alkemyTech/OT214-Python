@@ -55,4 +55,3 @@ with DAG(
     )
 
     opr_extract_data >> opr_transform_data >> opr_upload_data
-
