@@ -11,7 +11,7 @@ from sqlalchemy import create_engine
 
 from pathlib import Path, PurePath
 
-
+# Arguments to be used by the dag by default
 default_args = {
     "owner": "alkymer",
     "depends_on_past": False,
@@ -21,6 +21,7 @@ default_args = {
     "retry_delay": timedelta(minutes=5),
     "schedule_interval": '@hourly'
 }
+    
 
 
 class ETL():
@@ -34,8 +35,12 @@ class ETL():
     def _delete_exists(self, queries_file):
         self.logger.info("Deleting data used.")
 
-        for name_queries, _ in queries_file.items():
-            os.remove(self.data_path + name_queries + ".csv")
+        try:
+            for name_queries, _ in queries_file.items():
+                name_file = name_queries.split(".")[0]
+                os.remove(self.data_path + name_file + ".csv")
+        except Exception as e:
+            self.logger.warning("Data already used not found")
 
     def _create_engine(self):
         self.logger.info("Getting URI from .env")
@@ -66,16 +71,18 @@ class ETL():
         try:
             # create .csv with name and df
             for name_query, df in queries_file.items():
-                df.to_csv(self.data_path + name_query + ".csv")
+                name_file = name_query.split(".")[0]
+
+                df.to_csv(self.data_path + name_file + ".csv")
         except Exception as e:
             self.logger.warning("Error saving data.csv \n" + str(e))
 
     # Check database status
-    def _database_status(self, engine):
+    def _database_status(self):
         self.logger.info("Checking database status.")
 
         try:
-            if not bool(engine):
+            if not bool(self.engine):
                 raise ValueError("Database doesn't exists.")
             return
         except Exception as e:
@@ -99,6 +106,7 @@ class ETL():
 
         return result
 
+
     def extract(self):
         self.logger.info("Extracting data.")
         try:
@@ -107,7 +115,7 @@ class ETL():
             self.logger.info("Connecting database.")
             self.connection = self.engine.connect()
 
-            self._database_status(self.connection)
+            self._database_status()
 
             # get result queries from engine
             result_queries = self._make_query()
@@ -128,15 +136,14 @@ class ETL():
 
     def __init__(self, sql_paths="/sql/",
                  csv_paths="/files/", logger_config="dev"):
-        self.logger = get_logger(logger_config)
+        self.logger = get_logger(logger_name=logger_config)
 
-        #
-        path_university_f = Path(__file__).parents[1]
+        # get path
+        path_university_f = os.path.dirname(__file__)
 
         self.logger.info("Starting ETL process.")
-        self.query_path = path_university_f + sql_paths
-        self.data_path = path_university_f + csv_paths
-
+        self.query_path = path_university_f + ".." + sql_paths
+        self.data_path = path_university_f + ".." + csv_paths
 
 with DAG(
     "university_f",
