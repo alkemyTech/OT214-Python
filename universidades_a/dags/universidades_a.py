@@ -1,10 +1,11 @@
-import logging
 from datetime import datetime, timedelta
+from pathlib import Path
 
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-
-from config.logging_config import setup_logging
+from airflow.providers.amazon.aws.transfers.local_to_s3 import \
+    LocalFilesystemToS3Operator
+from decouple import config
 
 default_args = {
     'email': ['matiaspariente@hotmail.com'],
@@ -14,6 +15,8 @@ default_args = {
     'retry_delay': timedelta(minutes=1),
     "schedule_interval": '@hourly'
 }
+
+filepath_universidades_a = Path(__file__).parents[1]
 
 
 def extract_sql():
@@ -31,12 +34,6 @@ def transform_data():
 def load_data_flores():
 
     # function that will upload to S3 universidad de flores transform data
-    pass
-
-
-def load_data_villamaria():
-
-    # function that will upload to S3 universida de Villa Maria transform data
     pass
 
 
@@ -67,10 +64,14 @@ with DAG(
         python_callable=load_data_flores
         )
 
-    # Operator that will upload to S3 universida de Villa Maria transform data
-    load_villamaria = PythonOperator(
-        task_id='load_data_villamaria_task',
-        python_callable=load_data_villamaria
-        )
+    # Operator that will upload to S3 universidad de flores transform data
+    load_villamaria = LocalFilesystemToS3Operator(
+        task_id="load_data_villamaria_task",
+        filename=f"{filepath_universidades_a}/"
+                "dags/files/universidad_villamaria.txt",
+        dest_key='universidad_villamaria',
+        dest_bucket=config('_S3_BUCKET'),
+        replace=True
+    )
 
     extract >> transform >> [load_flores, load_villamaria]
