@@ -2120,3 +2120,948 @@
 31-May-22 - __name__ - Starting data transformation.
 31-May-22 - __name__ - jujuy.csv file read successfuly.
 31-May-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+31-May-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+31-May-22 - __name__ - Conected to DataBase PostgreSQL
+31-May-22 - __name__ - File for university Palermo created and written.
+31-May-22 - __name__ - File for university Jujuy created and written.
+31-May-22 - __name__ - Starting data transformation.
+31-May-22 - __name__ - .csv file read successfuly.
+31-May-22 - __name__ - Data for Universidad Palermo written to .txt file.
+31-May-22 - __name__ - Starting data transformation.
+31-May-22 - __name__ - jujuy.csv file read successfuly.
+31-May-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+01-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+01-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+01-Jun-22 - __name__ - File for university Palermo created and written.
+01-Jun-22 - __name__ - File for university Jujuy created and written.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - .csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+01-Jun-22 - __name__ - Starting data transformation.
+01-Jun-22 - __name__ - jujuy.csv file read successfuly.
+01-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - File Universidad_Palermo.txt uploaded to S3
+02-Jun-22 - __name__ - File Universidad_Palermo.txt uploaded to S3
+02-Jun-22 - __name__ - ETL process for universities C completed!!!
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - File Universidad_Palermo.txt uploaded to S3
+02-Jun-22 - __name__ - File Universidad_Palermo.txt uploaded to S3
+02-Jun-22 - __name__ - ETL process for universities C completed!!!
+02-Jun-22 - __name__ - File Universidad_Palermo.txt uploaded to S3
+02-Jun-22 - __name__ - File Universidad_Palermo.txt uploaded to S3
+02-Jun-22 - __name__ - ETL process for universities C completed!!!
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - File Universidad_Palermo.txt uploaded to S3
+02-Jun-22 - __name__ - File Universidad_Palermo.txt uploaded to S3
+02-Jun-22 - __name__ - ETL process for universities C completed!!!
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - File Universidad_Palermo.txt could not be uploaded.
+02-Jun-22 - __name__ - File Universidad_Jujuy.txt could not be uploaded.
+02-Jun-22 - __name__ - ETL process for universitiy Universidad_Jujuy.txt completed!!!
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - File Universidad_Palermo.txt uploaded to S3
+02-Jun-22 - __name__ - File Universidad_Jujuy.txt uploaded to S3
+02-Jun-22 - __name__ - ETL process for universitiy Universidad_Jujuy.txt completed!!!
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation for Universidad .
+02-Jun-22 - __name__ - .csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation.
+02-Jun-22 - __name__ - jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - File Universidad_Palermo.txt uploaded to S3
+02-Jun-22 - __name__ - File Universidad_Jujuy.txt uploaded to S3
+02-Jun-22 - __name__ - ETL process for universitiy Universidad_Jujuy.txt completed!!!
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation for Universidad Palermo.
+02-Jun-22 - __name__ - universidad_palermo.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation for Universidad Jujuy.
+02-Jun-22 - __name__ - universidad_jujuy.csv file read successfuly.
+02-Jun-22 - __name__ - Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - File Universidad_Palermo.txt uploaded to S3
+02-Jun-22 - __name__ - File Universidad_Jujuy.txt uploaded to S3
+02-Jun-22 - __name__ - ETL process for universitiy Universidad_Jujuy.txt completed!!!
+02-Jun-22 - __name__ - Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation for Universidad Palermo.
+02-Jun-22 - __name__ -     universidad_palermo.csv file read successfuly.
+02-Jun-22 - __name__ -     Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation for Universidad Jujuy.
+02-Jun-22 - __name__ -     universidad_jujuy.csv file read successfuly.
+02-Jun-22 - __name__ -     Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload
+02-Jun-22 - __name__ - S3 session created
+02-Jun-22 - __name__ - File Universidad_Palermo.txt uploaded to S3
+02-Jun-22 - __name__ - File Universidad_Jujuy.txt uploaded to S3
+02-Jun-22 - __name__ - ETL process for universitiy Universidad_Jujuy.txt completed!!!
+
+02-Jun-22 - __name__ - 
+Starting ETL for universities Palermo and Jujuy.
+02-Jun-22 - __name__ - Conected to DataBase PostgreSQL
+02-Jun-22 - __name__ - File for university Palermo created and written.
+02-Jun-22 - __name__ - File for university Jujuy created and written.
+02-Jun-22 - __name__ - Starting data transformation for Universidad Palermo.
+02-Jun-22 - __name__ -     universidad_palermo.csv file read successfuly.
+02-Jun-22 - __name__ -     Data for Universidad Palermo written to .txt file.
+02-Jun-22 - __name__ - Starting data transformation for Universidad Jujuy.
+02-Jun-22 - __name__ -     universidad_jujuy.csv file read successfuly.
+02-Jun-22 - __name__ -     Data for Universidad Jujuy written to .txt file.
+02-Jun-22 - __name__ - Starting Upload to S3 process.
+02-Jun-22 - __name__ -     S3 session created
+02-Jun-22 - __name__ -    File Universidad_Palermo.txt uploaded to S3
+02-Jun-22 - __name__ -    File Universidad_Jujuy.txt uploaded to S3
+02-Jun-22 - __name__ - ETL process for universitiy Universidad_Jujuy.txt completed!!!
+

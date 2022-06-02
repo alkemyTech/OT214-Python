@@ -7,9 +7,12 @@ from decouple import config
 from sqlalchemy import create_engine
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
+from airflow.operators.dummy import DummyOperator
+from airflow.utils.trigger_rule import TriggerRule
 
 from logging_config import logging_configuration
 from pandas_processing_dicts import jujuy_columns, palermo_columns
+from S3operator import S3Operator
 
 # DAG default arguments dictionary, running hourly with 5 retries.
 default_args = {
@@ -19,14 +22,20 @@ default_args = {
     "tags": "[aceleracion]",
 }
 
-# Source DataBase properties dictionary to be injected as **kwargs
-# on extract_data funct.
+# Source and destination DataBase properties dictionaries to be
+# injected as **kwargs on extract_data and upload_data functions.
 db_args = {
     "user": config("_PG_USER"),
     "passwd": config("_PG_PASSWD"),
     "host": config("_PG_HOST"),
     "port": config("_PG_PORT"),
     "db": config("_PG_DB"),
+}
+
+s3_kwargs = {
+    'bucket': config('_BUCKET_NAME'),
+    'p_key': config('_PUBLIC_KEY'),
+    's_key': config('_SECRET_KEY')
 }
 
 _paths = {
@@ -47,6 +56,10 @@ _paths = {
     ),
 }
 
+s3_dict = {
+    'Universidad_Palermo.txt': "./OT214-Python/universidades_c/files/universidad_palermo.txt",
+    'Universidad_Jujuy.txt': "./OT214-Python/universidades_c/files/universidad_jujuy.txt"
+    }
 
 # Function injected to the transforming functions to calculate age.
 def calc_age(dob):
@@ -62,7 +75,7 @@ def calc_age(dob):
 # Function to Extract data from source DataBase.
 def extract_data(loggerfunc, paths_dict, **kwargs):
     loggr = loggerfunc()
-    loggr.info("Starting ETL for universities Palermo and Jujuy.")
+    loggr.info("\nStarting ETL for universities Palermo and Jujuy.")
     engine = create_engine(
         "postgresql://{user}:{passwd}@{host}:{port}/{db}".format(**kwargs)
     )
@@ -87,12 +100,12 @@ def extract_data(loggerfunc, paths_dict, **kwargs):
 # Function to transform data for university Palermo.
 def palermo_transform_data(loggerfunc, paths_dict, columns_dict, age_func):
     loggr = loggerfunc()
-    loggr.info("Starting data transformation.")
+    loggr.info("Starting data transformation for Universidad Palermo.")
     try:
         df_palermo = pd.read_csv(
             paths_dict["query_palermo"][1], index_col=False, encoding="utf-8"
         )
-        loggr.info(".csv file read successfuly.")
+        loggr.info("universidad_palermo.csv file read successfuly.")
     except Exception:
         loggr.info(".csv file could not be read. Check .csv file path.")
         return False
@@ -180,7 +193,7 @@ def palermo_transform_data(loggerfunc, paths_dict, columns_dict, age_func):
 # Function to transform data for university Jujuy.
 def jujuy_transform_data(loggerfunc, paths_dict, columns_dict, age_func):
     loggr = loggerfunc()
-    loggr.info("Starting data transformation.")
+    loggr.info("Starting data transformation for Universidad Jujuy.")
     try:
         df_jujuy_raw = pd.read_csv(
             paths_dict["query_jujuy"][1], index_col=False, encoding="utf-8"
@@ -188,9 +201,9 @@ def jujuy_transform_data(loggerfunc, paths_dict, columns_dict, age_func):
         df_jujuy_postal = pd.read_csv(
             paths_dict["postal_codes"], index_col=False, encoding="utf-8"
         )
-        loggr.info("jujuy.csv file read successfuly.")
+        loggr.info("universidad_jujuy.csv file read successfuly.")
     except Exception:
-        loggr.info("jujuy.csv file could not be read. Check .csv file path.")
+        loggr.info(".csv file could not be read. Check .csv file path.")
         return False
     df_jujuy_postal["localidad"] = df_jujuy_postal["localidad"].str.lower()
     df_jujuy_postal = df_jujuy_postal.rename(columns={"localidad": "location"})
@@ -276,8 +289,8 @@ def jujuy_transform_data(loggerfunc, paths_dict, columns_dict, age_func):
 
 # DAG to execute the ETL on schedule. Dict with default_args injected.
 with DAG(
-    "university_C_2",
-    start_date=datetime(2022, 5, 30),
+    "university_C_3",
+    start_date=datetime(2022, 6, 2),
     description="ETL for universities: Palermo, Jujuy",
     default_args=default_args,
     schedule_interval="@hourly",
@@ -303,4 +316,18 @@ with DAG(
         op_args=[logging_configuration, _paths, jujuy_columns, calc_age],
     )
 
-    opr_extract_data >> [opr_transform_palermo_data, opr_transform_jujuy_data]
+    join = DummyOperator(
+        task_id='join',
+        trigger_rule=TriggerRule.NONE_SKIPPED,
+    )
+
+    opr_upload_data = S3Operator(
+        task_id='upload_data',
+        names=s3_dict,
+        loggerfunc=logging_configuration,
+        op_kwargs=s3_kwargs
+    )
+
+    opr_extract_data >> [
+        opr_transform_palermo_data,
+        opr_transform_jujuy_data] >> join >> opr_upload_data
