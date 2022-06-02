@@ -1,5 +1,6 @@
 import os
 from datetime import datetime, timedelta
+from unicodedata import name
 
 import pandas as pd
 from airflow import DAG
@@ -26,11 +27,12 @@ class ETL():
     def transform(self):
         self.logger.info("Starting transform process")
 
-    def _delete_exists(self, r):
+    # Delete last .csv file created if exists
+    def _delete_exists(self, queries_file):
         self.logger.info("Deleting data used.")
 
-        for k, v in r.items():
-            os.remove(self.data_path + k + ".csv")
+        for name_queries, _ in queries_file.items():
+            os.remove(self.data_path + name_queries + ".csv")
 
     def _create_engine(self):
         self.logger.info("Getting URI from .env")
@@ -44,7 +46,8 @@ class ETL():
             self.logger.warning("Error connecting to database, check .env file"
                                 + "\n" + str(e))
 
-    def _save_csv(self, r):
+    # Save .csv and make .data columns
+    def _save_csv(self, queries_file):
         self.logger.info("Saving data.csv files.")
 
         try:
@@ -54,11 +57,12 @@ class ETL():
             self.logger.warning("Error creating ./data/ path \n" + str(e))
 
         try:
-            for k, v in r.items():
-                v.to_csv(self.data_path + k + ".csv")
+            for name_query, df in queries_file.items():
+                df.to_csv(self.data_path + name_query + ".csv")
         except Exception as e:
             self.logger.warning("Error saving data.csv \n" + str(e))
 
+    # Check database status
     def _database_status(self, engine):
         self.logger.info("Checking database status.")
 
@@ -77,10 +81,10 @@ class ETL():
 
         try:
             with self.connection as conn:
-                for i in os.listdir(self.query_path):
-                    with open(self.query_path + i) as sql_file:
+                for file_name in os.listdir(self.query_path):
+                    with open(self.query_path + file_name) as sql_file:
                         query = sql_file.read()
-                        result[i] = pd.read_sql(query, conn)
+                        result[file_name] = pd.read_sql(query, conn)
         except Exception as e:
             self.logger.warning("Error executing queries \n" + str(e))
         return result
@@ -95,15 +99,15 @@ class ETL():
 
             self._database_status(self.connection)
 
-            r = self._make_query()
+            result_queries = self._make_query()
 
-            if len(r) == 0:
+            if len(result_queries) == 0:
                 self.logger.warning("Queries not found.")
                 return
 
-            self._delete_exists(r)
+            self._delete_exists(result_queries)
 
-            self._save_csv(r)
+            self._save_csv(result_queries)
         except Exception as e:
             self.logger.error(str(e))
             self.logger.error("Error founded, stopping...")
