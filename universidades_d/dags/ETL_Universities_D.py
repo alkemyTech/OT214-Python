@@ -1,5 +1,6 @@
 import os
 from datetime import datetime, timedelta
+from logging import log
 
 from airflow import DAG
 from airflow.operators.python import PythonOperator
@@ -23,33 +24,36 @@ default_args = {
 }
 
 
-# credentials for establish a database connection
-def get_connection_credentials():
-    load_dotenv()
-    pg_user = os.getenv('_PG_USER')
-    pg_passwd = os.getenv('_PG_PASSWD')
-    pg_host = os.getenv('_PG_HOST')
-    pg_port = os.getenv('_PG_PORT')
-    pg_db = os.getenv('_PG_DB')
-    return f'postgresql://{pg_user}:{pg_passwd}@{pg_host}:{pg_port}/{pg_db}'
-
-
 # [END default_args]
 class ETL:
 
+    # credentials for establish a database connection
+    @staticmethod
+    def __get_connection_credentials():
+        load_dotenv()
+        pg_user = os.getenv('_PG_USER')
+        pg_passwd = os.getenv('_PG_PASSWD')
+        pg_host = os.getenv('_PG_HOST')
+        pg_port = os.getenv('_PG_PORT')
+        pg_db = os.getenv('_PG_DB')
+        return f'postgresql://{pg_user}:{pg_passwd}@{pg_host}:{pg_port}/{pg_db}'
+
     # getting engine for plug connection and test status
-    def create_connection(self):
-        url = get_connection_credentials()
+    @staticmethod
+    def __create_connection():
+        url = ETL.__get_connection_credentials()
         engine = create_engine(url)
         return engine
 
     # START extract function for get data from Database
     def extract(self):
-        connection = self.create_connection()
+        connection = self.__create_connection()
         connection_status = connection.connect()
         connection_check = bool(connection_status)
-        if connection_check is False or not connection:
-            raise ValueError('Connection to database fails')
+        if connection_check:
+            log(level=1, msg='Connection to database successful')
+        else:
+            log(level=4, msg='Connection to database fails')
 
     # list of action and process required to this function
 
