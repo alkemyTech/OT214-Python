@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from pathlib import Path, PurePath
+from pathlib import Path
 
 import pandas as pd
 
@@ -29,10 +29,10 @@ def transform_flores():
     '''
     try:
         filepath_universidades_a = Path(__file__).parents[1]
-        filepath_flores_csv = PurePath(
+        filepath_flores_csv = Path(
             filepath_universidades_a,
             'dags/files/universidad_flores.csv')
-        filepath_cpaloc_csv = PurePath(
+        filepath_cpaloc_csv = Path(
             filepath_universidades_a,
             'dags/files/codigos_postales.csv')
         df_cpaloc = pd.read_csv(filepath_cpaloc_csv, sep=',')
@@ -81,7 +81,7 @@ def transform_flores():
         df_flores['postal_code'] = df_flores['postal_code'].astype('object')
         # directory is generated and the file is saved
         # with the normalizations
-        filepath_flores_txt = PurePath(
+        filepath_flores_txt = Path(
             filepath_universidades_a,
             'dags/files/universidad_flores.txt')
         filepath_flores_txt.parent.mkdir(parents=True, exist_ok=True)
@@ -103,10 +103,10 @@ def transform_villamaria():
     '''
     try:
         filepath_universidades_a = Path(__file__).parents[1]
-        filepath_villamaria_csv = PurePath(
+        filepath_villamaria_csv = Path(
             filepath_universidades_a,
             'dags/files/universidad_villamaria.csv')
-        filepath_cpaloc_csv = PurePath(
+        filepath_cpaloc_csv = Path(
             filepath_universidades_a,
             'dags/files/codigos_postales.csv')
         df_cpaloc = pd.read_csv(filepath_cpaloc_csv, sep=',')
@@ -169,7 +169,7 @@ def transform_villamaria():
             'postal_code'] .astype('object')
         # directory is generated and the file is saved
         # with the normalizations
-        filepath_villamaria_txt = PurePath(
+        filepath_villamaria_txt = Path(
             filepath_universidades_a,
             'dags/files/universidad_villamaria.txt')
         filepath_villamaria_txt.parent.mkdir(parents=True, exist_ok=True)
