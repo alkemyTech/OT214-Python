@@ -22,16 +22,17 @@ def transform_data():
     Universities Data is extracted from the csv files generated in extract task
     These data are normalized as required through the transform functions
     '''
+    logger = logging.getLogger("Transform")
     res = transform_flores()
     if(res == "success"):
-        logging.info(
+        logger.info(
             "Universidad de Flores normalized txt were generate succesfully")
     else:
-        logging.error(res)
+        logger.error(res)
     res = transform_villamaria()
     if(res == "success"):
-        logging.info(
+        logger.info(
             "Universidad de Villa María"
             "normalized txt were generate succesfully")
     else:
-        logging.error(res)
+        logger.error(res)
