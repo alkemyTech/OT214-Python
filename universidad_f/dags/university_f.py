@@ -9,6 +9,9 @@ from config_loader import get_logger
 from decouple import config
 from sqlalchemy import create_engine
 
+from pathlib import Path, PurePath
+
+
 default_args = {
     "owner": "alkymer",
     "depends_on_past": False,
@@ -37,12 +40,14 @@ class ETL():
     def _create_engine(self):
         self.logger.info("Getting URI from .env")
         try:
+            # Create engine to make query
             self.engine = create_engine("postgresql://" + config("_PG_USER") +
                                         ":" + config("_PG_PASSWD") +
                                         "@" + config("_PG_HOST") +
                                         ":" + config("_PG_PORT") +
                                         "/" + config("_PG_DB"))
         except Exception as e:
+            # if not found .env with configuration
             self.logger.warning("Error connecting to database, check .env file"
                                 + "\n" + str(e))
 
@@ -51,12 +56,15 @@ class ETL():
         self.logger.info("Saving data.csv files.")
 
         try:
+            # create data path
             if not os.path.exists(self.data_path):
                 os.mkdir(self.data_path)
         except Exception as e:
+            # permission error with mkdir
             self.logger.warning("Error creating ./data/ path \n" + str(e))
 
         try:
+            # create .csv with name and df
             for name_query, df in queries_file.items():
                 df.to_csv(self.data_path + name_query + ".csv")
         except Exception as e:
@@ -77,6 +85,7 @@ class ETL():
     def _make_query(self):
         self.logger.info("Executing query.")
 
+        # result get {name_file:query_result}
         result = {}
 
         try:
@@ -87,6 +96,7 @@ class ETL():
                         result[file_name] = pd.read_sql(query, conn)
         except Exception as e:
             self.logger.warning("Error executing queries \n" + str(e))
+
         return result
 
     def extract(self):
@@ -99,26 +109,33 @@ class ETL():
 
             self._database_status(self.connection)
 
+            # get result queries from engine
             result_queries = self._make_query()
 
+            # check if queries exists or return []
             if len(result_queries) == 0:
                 self.logger.warning("Queries not found.")
                 return
 
+            # delete data files if exists
             self._delete_exists(result_queries)
 
+            # save .csv
             self._save_csv(result_queries)
         except Exception as e:
             self.logger.error(str(e))
             self.logger.error("Error founded, stopping...")
 
-    def __init__(self, sql_paths="../sql/",
-                 csv_paths="../files/", logger_config="dev"):
+    def __init__(self, sql_paths="/sql/",
+                 csv_paths="/files/", logger_config="dev"):
         self.logger = get_logger(logger_config)
 
+        #
+        path_university_f = Path(__file__).parents[1]
+
         self.logger.info("Starting ETL process.")
-        self.query_path = sql_paths
-        self.data_path = csv_paths
+        self.query_path = path_university_f + sql_paths
+        self.data_path = path_university_f + csv_paths
 
 
 with DAG(
