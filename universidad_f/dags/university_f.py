@@ -1,5 +1,6 @@
 import os
 from datetime import datetime, timedelta
+from pathlib import Path, PurePath
 from unicodedata import name
 
 import pandas as pd
@@ -8,8 +9,6 @@ from airflow.operators.python import PythonOperator
 from config_loader import get_logger
 from decouple import config
 from sqlalchemy import create_engine
-
-from pathlib import Path, PurePath
 
 # Arguments to be used by the dag by default
 default_args = {

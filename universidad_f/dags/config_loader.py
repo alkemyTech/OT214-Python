@@ -1,7 +1,8 @@
 import logging
 import logging.config
-import yaml
 import os
+
+import yaml
 
 configuration_path = os.path.dirname(__file__) + "/config/"
 
