@@ -1,7 +1,10 @@
+import logging
 from datetime import datetime, timedelta
 
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
+
+from config.logging_config import setup_logging
 
 default_args = {
     'email': ['matiaspariente@hotmail.com'],
