@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from pathlib import Path
+from pathlib import Path, PurePath
 
 import pandas as pd
 
@@ -28,10 +28,13 @@ def transform_flores():
                     (str): normalization result message
     '''
     try:
-        filepath_flores_csv = Path(
-            'airflow/universidades_a/dags/files/universidad_flores.csv')
-        filepath_cpaloc_csv = Path(
-            'airflow/universidades_a/dags/files/codigos_postales.csv')
+        filepath_universidades_a = Path(__file__).parents[1]
+        filepath_flores_csv = PurePath(
+            filepath_universidades_a,
+            'dags/files/universidad_flores.csv')
+        filepath_cpaloc_csv = PurePath(
+            filepath_universidades_a,
+            'dags/files/codigos_postales.csv')
         df_cpaloc = pd.read_csv(filepath_cpaloc_csv, sep=',')
         df_flores = pd.read_csv(filepath_flores_csv, sep=',')
         # column direccion not required for processing
@@ -78,8 +81,9 @@ def transform_flores():
         df_flores['postal_code'] = df_flores['postal_code'].astype('object')
         # directory is generated and the file is saved
         # with the normalizations
-        filepath_flores_txt = Path(
-            'airflow/universidades_a/dags/files/universidad_flores.txt')
+        filepath_flores_txt = PurePath(
+            filepath_universidades_a,
+            'dags/files/universidad_flores.txt')
         filepath_flores_txt.parent.mkdir(parents=True, exist_ok=True)
         df_flores.to_csv(filepath_flores_txt, index=False)
     except Exception as exc:
@@ -98,10 +102,13 @@ def transform_villamaria():
                     (str): normalization result message
     '''
     try:
-        filepath_villamaria_csv = Path(
-            'airflow/universidades_a/dags/files/universidad_villamaria.csv')
-        filepath_cpaloc_csv = Path(
-            'airflow/universidades_a/dags/files/codigos_postales.csv')
+        filepath_universidades_a = Path(__file__).parents[1]
+        filepath_villamaria_csv = PurePath(
+            filepath_universidades_a,
+            'dags/files/universidad_villamaria.csv')
+        filepath_cpaloc_csv = PurePath(
+            filepath_universidades_a,
+            'dags/files/codigos_postales.csv')
         df_cpaloc = pd.read_csv(filepath_cpaloc_csv, sep=',')
         # puplicate locations that refer to more than one postl code should
         # be eliminated for not having more information regarding the location
@@ -162,8 +169,9 @@ def transform_villamaria():
             'postal_code'] .astype('object')
         # directory is generated and the file is saved
         # with the normalizations
-        filepath_villamaria_txt = Path(
-            'airflow/universidades_a/dags/files/universidad_villamaria.txt')
+        filepath_villamaria_txt = PurePath(
+            filepath_universidades_a,
+            'dags/files/universidad_villamaria.txt')
         filepath_villamaria_txt.parent.mkdir(parents=True, exist_ok=True)
         df_villamaria.to_csv(filepath_villamaria_txt, index=False)
     except Exception as exc:
