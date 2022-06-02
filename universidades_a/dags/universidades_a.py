@@ -33,9 +33,11 @@ def extract_sql():
         logger.info("Database connection success")
 
     try:
-        filepath_flores = PurePath(filepath_universidades_a,
+        filepath_flores = PurePath(
+            filepath_universidades_a,
             'sql/flores.sql')
-        filepath_villamaria = PurePath(filepath_universidades_a,
+        filepath_villamaria = PurePath(
+            filepath_universidades_a,
             'sql/villaMaria.sql')
         with open(filepath_flores, 'r', encoding="utf-8") as file:
             query_flores = file.read()
@@ -49,10 +51,12 @@ def extract_sql():
         logger.info("SQL query reading success")
 
     try:
-        filepath_flores_csv = PurePath(filepath_universidades_a,
+        filepath_flores_csv = PurePath(
+            filepath_universidades_a,
             'dags/files/universidad_flores.csv')
         filepath_flores_csv.parent.mkdir(parents=True, exist_ok=True)
-        filepath_villamaria_csv = PurePath(filepath_universidades_a,
+        filepath_villamaria_csv = PurePath(
+            filepath_universidades_a,
             'dags/files/universidad_villamaria.csv')
         filepath_villamaria_csv.parent.mkdir(parents=True, exist_ok=True)
         df_flores.to_csv(filepath_flores_csv, index=False)
