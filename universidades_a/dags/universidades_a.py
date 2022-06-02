@@ -4,8 +4,12 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 
 default_args = {
-    'owner': 'alkymer',
-    'depends_on_past': False
+    'email': ['matiaspariente@hotmail.com'],
+    'email_on_failure': False,
+    'email_on_retry': False,
+    'retries': 5,
+    'retry_delay': timedelta(minutes=1),
+    "schedule_interval": '@hourly'
 }
 
 
