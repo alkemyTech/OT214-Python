@@ -1,9 +1,10 @@
 import logging
 import logging.config
+import os
 
 import yaml
 
-configuration_path = "./config/"
+configuration_path = os.path.dirname(__file__) + "/config/"
 
 
 def get_dataframe_config(columns_file="columns.yaml"):
