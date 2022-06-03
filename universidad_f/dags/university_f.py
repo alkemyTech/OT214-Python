@@ -1,7 +1,5 @@
 import os
 from datetime import datetime, timedelta
-from pathlib import Path, PurePath
-from unicodedata import name
 
 import pandas as pd
 from airflow import DAG
