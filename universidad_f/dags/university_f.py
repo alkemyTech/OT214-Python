@@ -20,7 +20,6 @@ default_args = {
     "retry_delay": timedelta(minutes=5),
     "schedule_interval": '@hourly'
 }
-    
 
 
 class ETL():
@@ -39,7 +38,7 @@ class ETL():
                 name_file = name_queries.split(".")[0]
                 os.remove(self.data_path + name_file + ".csv")
         except Exception as e:
-            self.logger.warning("Data already used not found")
+            self.logger.warning("Data already used not found" + str(e))
 
     def _create_engine(self):
         self.logger.info("Getting URI from .env")
@@ -105,7 +104,6 @@ class ETL():
 
         return result
 
-
     def extract(self):
         self.logger.info("Extracting data.")
         try:
@@ -143,6 +141,7 @@ class ETL():
         self.logger.info("Starting ETL process.")
         self.query_path = path_university_f + ".." + sql_paths
         self.data_path = path_university_f + ".." + csv_paths
+
 
 with DAG(
     "university_f",
