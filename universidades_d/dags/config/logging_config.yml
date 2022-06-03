@@ -12,7 +12,7 @@ handlers:
     info_file_handler:
         class: logging.FileHandler
         level: INFO
-        filename: ./OT214-Python/universidades_d/dags/loggings.log
+        filename: ./loggings.log
         formatter: standard
         encoding: utf8
 
