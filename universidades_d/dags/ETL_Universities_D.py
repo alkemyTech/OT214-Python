@@ -1,3 +1,4 @@
+import logging
 import os
 from datetime import datetime, timedelta
 
@@ -6,7 +7,6 @@ from airflow.operators.python import PythonOperator
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 
-from config.logging_config import logging_configuration
 
 # [END import_module]
 
@@ -24,7 +24,8 @@ default_args = {
     'scheduler_interval': timedelta(hours=1)
 }
 # initialize log config
-log = logging_configuration()
+logging.basicConfig(level=logging.INFO)
+log = logging.getLogger(__name__)
 
 
 # [END default_args]
