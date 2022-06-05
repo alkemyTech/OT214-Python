@@ -9,21 +9,6 @@ handlers:
     level: DEBUG
     formatter: simple
     stream: ext://sys.stdout
-loggers:
-  task_connect:
-    level: DEBUG
-    handlers: [console]
-    propagate: no
-loggers:
-  task_process:
-    level: DEBUG
-    handlers: [console]
-    propagate: no 
-loggers:
-  task_send:
-    level: DEBUG
-    handlers: [console]
-    propagate: no
 root:
   level: DEBUG
   handlers: [console]

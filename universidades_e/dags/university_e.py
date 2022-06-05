@@ -1,16 +1,12 @@
 import os
-import sys
 from datetime import datetime, timedelta
 
 import pandas as pd
-import psycopg2
 import sqlalchemy
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from decouple import config
-from sqlalchemy import create_engine
 
-sys.path.append('.')
 from config.logging_config import lg_connect, lg_process, lg_send, path
 
 # dag default arguments and retries
@@ -41,17 +37,18 @@ with DAG(
 
         lg_connect.info('initializing DAG connect.')
 
-        engine = create_engine(f"""postgresql+psycopg2://{
-            user}:{password}@{host}:{port}/{database}""")
+        engine = sqlalchemy.create_engine(f'postgresql+psycopg2://'
+                                          f'{user}:{password}@{host}:'
+                                          f'{port}/{database}')
 
         conn = engine.connect()
         lg_connect.info('Database connect successfuly.')
 
         # Db query
         # creating the path to sql files
-        path_inter = path+'/sql/abierta_interamericana.sql'
-        path_pampa = path+'/sql/nacional_de_la_pampa.sql'
-        path_files = path+'/files'
+        path_inter = f'{path}/sql/abierta_interamericana.sql'
+        path_pampa = f'{path}/sql/nacional_de_la_pampa.sql'
+        path_files = f'{path}/files'
         if not os.path.exists(path_files):
             os.makedirs(path_files)
             lg_connect.info('the files folder was created')
@@ -67,9 +64,9 @@ with DAG(
         lg_connect.info('reading sql with pandas')
 
         # generating the csv files
-        df_query_inter.to_csv(path+'/files' +
+        df_query_inter.to_csv(f'{path}/files'
                               '/universidad_abierta_interamericana.csv')
-        df_query_pampa.to_csv(path+'/files' +
+        df_query_pampa.to_csv(f'{path}/files'
                               '/universidad_nacional_de_la_pampa.csv')
         lg_connect.info('csv files created.')
 
