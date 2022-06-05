@@ -7,18 +7,28 @@ import yaml
 
 def logging_configuration(_path='/logging_config.yml'):
     _path_yml = os.path.dirname(__file__)+_path
+    _path_log = os.path.dirname(__file__)+'/logging.log'
     try:
         with open(_path_yml, 'rt') as file:
             config = yaml.safe_load(file.read())
-            logging.config.dictConfig(config)
-            logger = logging.getLogger('ETL_DAG')
-            return logger
+        if config['handlers']['log_handler']['filename'] != _path_log:
+           config['handlers']['log_handler']['filename'] = _path_log
+           with open(_path_yml, 'w') as file_w:
+               file_w.write(str(config))
+        logging.config.dictConfig(config)
+        logger = logging.getLogger('ETL_DAG')
+        return logger
     except EnvironmentError:
         logger = get_default_log()
         return logger
 
 
 def get_default_log():
-    logging.basicConfig(level=logging.INFO)
-    logger = logging.getLogger()
+    logger = logging.getLogger('ETL_DAG')
+    logger.setLevel(logging.INFO)
+    form = logging.Formatter('%(asctime)s - %(name)s - %(message)s', datefmt='%Y-%m-%d %I:%M:%S %p')
+    path = os.path.dirname(os.path.abspath(__file__))+'/logging.log'
+    file_handler = logging.FileHandler(path)
+    file_handler.setFormatter(form)
+    logger.addHandler(file_handler)
     return logger

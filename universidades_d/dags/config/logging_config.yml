@@ -9,7 +9,7 @@ formatters:
         format: "%(asctime)s - %(name)s - %(message)s"
 
 handlers:
-    info_file_handler:
+    log_handler:
         class: logging.FileHandler
         level: INFO
         filename: ./loggings.log
@@ -18,11 +18,11 @@ handlers:
 
 root:
     level: INFO
-    handlers: [info_file_handler]
+    handlers: [log_handler]
 
 loggers:
     Logger:
         level: INFO
-        handlers: [info_file_handler]
+        handlers: [log_handler]
         formatter: standard
         propogate: no
