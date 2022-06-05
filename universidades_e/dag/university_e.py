@@ -1,11 +1,9 @@
 from datetime import datetime, timedelta
 
-import psycopg2
 import sqlalchemy
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from decouple import config
-from sqlalchemy import create_engine
 
 # dag default arguments and retries
 default_arguments = {
@@ -32,8 +30,9 @@ with DAG(
         password = config('_PG_PASSWORD')
         host = config('_PG_HOST')
         port = config('_PG_PORT')
-        engine = create_engine(f"""postgresql+psycopg2://{
-            user}:{password}@{host}:{port}/{database}""")
+        engine = sqlalchemy.create_engine(f'postgresql+psycopg2://'
+                                          f'{user}:{password}@{host}:'
+                                          f'{port}/{database}')
         engine.connect()
         print('******** Database connect successfuly *********')
 
