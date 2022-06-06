@@ -6,6 +6,10 @@ from sqlalchemy_utils import database_exists
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
+import os
+
+from s3_operator import S3Operator
+
 from config_loader import get_logger
 
 logger = get_logger()
@@ -30,8 +34,10 @@ class ETL():
         self.rows_config = rows_file
         self.columns_config = columns_file
 
+        self.data_path = os.path.dirname(__file__) + "/../data/"
+
     def _database_status(self, engine):
-        if not database_exists(engine) or not bool(engine):
+        if not bool(engine):
             return False
         return True
 
@@ -80,7 +86,10 @@ with DAG(
     pandas_task = PythonOperator(task_id="transform",
                                  python_callable=etl.transform)
 
-    save_task = PythonOperator(task_id="load", python_callable=etl.load)
+    save_task = S3Operator(task_id="save",
+                           logger=logger,
+                           s3_credentials=config,
+                           data_path=etl.data_path)
 
     # the dag will allow the ETL process to be done for all
     # the universities that have queries, are in /university_f/sql
