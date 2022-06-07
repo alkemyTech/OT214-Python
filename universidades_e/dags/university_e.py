@@ -65,9 +65,9 @@ with DAG(
 
         # generating the csv files
         df_query_inter.to_csv(f'{path}/files'
-                              '/universidad_abierta_interamericana.csv')
+                              '/universidad_abierta_interamericana.csv', index=False)
         df_query_pampa.to_csv(f'{path}/files'
-                              '/universidad_nacional_de_la_pampa.csv')
+                              '/universidad_nacional_de_la_pampa.csv', index=False)
         lg_connect.info('csv files created.')
 
     # process data function
