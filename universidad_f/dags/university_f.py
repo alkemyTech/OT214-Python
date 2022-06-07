@@ -1,16 +1,12 @@
+import os
 from datetime import datetime, timedelta
 
-from decouple import config
-from sqlalchemy import create_engine
-from sqlalchemy_utils import database_exists
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-
-import os
-
-from s3_operator import S3Operator
-
 from config_loader import get_logger
+from decouple import config
+from s3_operator import S3Operator
+from sqlalchemy import create_engine
 
 logger = get_logger()
 
