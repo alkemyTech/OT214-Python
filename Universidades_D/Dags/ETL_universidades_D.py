@@ -185,9 +185,9 @@ class ETL:
         path_directory = os.path.dirname(__file__) + '/files'
         try:
             os.makedirs(path_directory, exist_ok=True)
-            log.info(f'Directory "files" created successfully')
+            log.info(f'Directory {"files"} created successfully')
         except OSError as error:
-            log.error(f'Directory "files" can not be created: {error}')
+            log.error(f'Directory {"files"} can not be created: {error}')
         path_utn = path_directory + '/' + fn_utn
         path_tdf = path_directory + '/' + fn_tdf
         try:
