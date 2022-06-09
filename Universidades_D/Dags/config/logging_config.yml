@@ -1,0 +1,28 @@
+version: 1
+disable_existing_loggers: true
+
+formatters:
+    standard:
+        class: logging.Formatter
+        style:  "%"
+        datefmt: '%Y-%m-%d %I:%M:%S %p'
+        format: "%(asctime)s - %(name)s - %(message)s"
+
+handlers:
+    log_handler:
+        class: logging.FileHandler
+        level: INFO
+        filename: ./loggings.log
+        formatter: standard
+        encoding: utf8
+
+root:
+    level: INFO
+    handlers: [log_handler]
+
+loggers:
+    Logger:
+        level: INFO
+        handlers: [log_handler]
+        formatter: standard
+        propogate: no
