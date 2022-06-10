@@ -4,7 +4,7 @@ import os
 
 import yaml
 
-path = os.getcwd()
+path = "./dags/OT214-Python/universidades_e/dags"
 # configuring logging with yaml file
 with open(f'{path}/config/logging_config.yaml', 'r') as archive:
     config = yaml.safe_load(archive.read())
