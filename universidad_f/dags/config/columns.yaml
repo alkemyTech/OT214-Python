@@ -1,0 +1,40 @@
+
+dataframes_config:
+  columns: {"names": "name",
+            "sexo": "gender",
+            "eemail": "email",
+            "nombrre": "name",
+            "carrera": "carrer",
+            "carrerra": "carrer",
+            "direccion": "address",
+            "localidad": "location",
+            "nacimiento": "birthday",
+            "direcciones": "address",
+            "universidad": "university",
+            "codgoposstal": "postal_code",
+            "univiersities": "university",
+            "fechas_nacimiento": "birthday",
+            "fechaiscripccion": "inscription_date",
+            "inscription_dates": "inscription_date"}
+
+  change_type: {"age": "int",
+                "postal_code": "str",
+                "birthday": "datetime",
+                "inscription_date": "datetime"}
+  
+  clear_columns: ["name",
+                  "email",
+                  "carrer",
+                  "location",
+                  "university"]
+  
+  final_columns: ["age",
+                  "email",
+                  'gender',
+                  "carrer",
+                  'location',
+                  "last_name",
+                  "first_name",
+                  "university",
+                  "postal_code",
+                  "inscription_date"]
