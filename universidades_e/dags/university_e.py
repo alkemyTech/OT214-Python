@@ -1,9 +1,16 @@
+
+import sys
+import os
 from datetime import datetime, timedelta
 
+import pandas as pd
 import sqlalchemy
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from decouple import config
+
+sys.path.insert(0,"./dags/OT214-Python/universidades_e")
+from dags.config.logging_config import lg_connect, lg_process, lg_send, path
 
 # dag default arguments and retries
 default_arguments = {
@@ -23,26 +30,56 @@ with DAG(
     default_args=default_arguments,
 )as dag:
 
-    # function of connection and db queries
+    # function of connection
     def conn_query():
         database = config("_PG_DATABASE")
         user = config('_PG_USERNAME')
         password = config('_PG_PASSWORD')
         host = config('_PG_HOST')
         port = config('_PG_PORT')
+
+        lg_connect.info('initializing DAG connect.')
+
         engine = sqlalchemy.create_engine(f'postgresql+psycopg2://'
                                           f'{user}:{password}@{host}:'
                                           f'{port}/{database}')
-        engine.connect()
-        print('******** Database connect successfuly *********')
+
+        conn = engine.connect()
+        lg_connect.info('Database connect successfuly.')
+
+        # Db query
+        # creating the path to sql files
+        path_inter = f'{path}/sql/abierta_interamericana.sql'
+        path_pampa = f'{path}/sql/nacional_de_la_pampa.sql'
+        path_files = f'{path}/files'
+        if not os.path.exists(path_files):
+            os.makedirs(path_files)
+            lg_connect.info('the files folder was created')
+
+        # reading the content of sql file
+        read_inter = open(path_inter, 'r', encoding='utf-8').read()
+        read_pampa = open(path_pampa, 'r', encoding='utf-8').read()
+        lg_connect.info('read files.')
+
+        # generating query with pandas
+        df_query_inter = pd.read_sql(read_inter, conn)
+        df_query_pampa = pd.read_sql(read_pampa, conn)
+        lg_connect.info('reading sql with pandas')
+
+        # generating the csv files
+        df_query_inter.to_csv(f'{path}/files'
+                              '/universidad_abierta_interamericana.csv', index=False)
+        df_query_pampa.to_csv(f'{path}/files'
+                              '/universidad_nacional_de_la_pampa.csv', index=False)
+        lg_connect.info('csv files created.')
 
     # process data function
     def proccess():
-        print('process data whith pandas')
+        lg_process.info('initializing DAG connect.')
 
     # function to send data process to s3
     def send():
-        print('send of panda processed info to a3 server')
+        lg_send.info('initializing DAG send data.')
 
     # pythonoperator for function of connect and queries
     python_connect = PythonOperator(

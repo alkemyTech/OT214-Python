@@ -1,10 +1,12 @@
 import logging
 import logging.config
+import os
 
 import yaml
 
+path = "./dags/OT214-Python/universidades_e/dags"
 # configuring logging with yaml file
-with open('logging_config.yaml', 'r') as archive:
+with open(f'{path}/config/logging_config.yaml', 'r') as archive:
     config = yaml.safe_load(archive.read())
     logging.config.dictConfig(config)
 
