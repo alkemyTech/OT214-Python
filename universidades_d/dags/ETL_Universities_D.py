@@ -1,6 +1,6 @@
-import os
+import logging
 from datetime import datetime, timedelta
-from logging import log
+import os
 
 from airflow import DAG
 from airflow.operators.python import PythonOperator
@@ -22,6 +22,9 @@ default_args = {
     'retry_delay': timedelta(minutes=2),
     'scheduler_interval': timedelta(hours=1)
 }
+# initialize log config
+logging.basicConfig(level=logging.INFO)
+log = logging.getLogger(__name__)
 
 
 # [END default_args]
@@ -51,9 +54,9 @@ class ETL:
         connection_status = connection.connect()
         connection_check = bool(connection_status)
         if connection_check:
-            log(level=1, msg='Connection to database successful')
+            log.info('Connection to database successful')
         else:
-            log(level=4, msg='Connection to database fails')
+            log.error('Connection to database fails')
 
     # list of action and process required to this function
 
