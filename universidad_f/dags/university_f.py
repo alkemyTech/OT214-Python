@@ -1,10 +1,13 @@
 import os
 from datetime import datetime, timedelta
+import sys
+from pathlib import Path
 
 import pandas as pd
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from config_loader import get_logger
+sys.path.insert(0,"./dags/OT214-Python/universidad_f")
+from dags.config_loader import get_logger
 from decouple import config
 from sqlalchemy import create_engine
 
@@ -135,10 +138,10 @@ class ETL():
 
         # get path
         path_university_f = os.path.dirname(__file__)
-
+        path_university_f = str(Path(path_university_f).parents[0])
         self.logger.info("Starting ETL process.")
-        self.query_path = path_university_f + ".." + sql_paths
-        self.data_path = path_university_f + ".." + csv_paths
+        self.query_path = path_university_f + sql_paths
+        self.data_path = path_university_f + csv_paths
 
 
 with DAG(
