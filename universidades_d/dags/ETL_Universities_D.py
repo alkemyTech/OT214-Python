@@ -1,12 +1,11 @@
 import logging
-import os
 from datetime import datetime, timedelta
+import os
 
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
-
 
 # [END import_module]
 
