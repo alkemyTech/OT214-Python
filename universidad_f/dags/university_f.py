@@ -1,16 +1,17 @@
 import os
-from datetime import datetime, timedelta
 import sys
+from datetime import datetime, timedelta
 from pathlib import Path
 
-from decouple import config
+import pandas as pd
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+from decouple import config
 from sqlalchemy import create_engine
-import pandas as pd
 
-sys.path.insert(0,"./dags/OT214-Python/universidad_f")
 from dags.config_loader import get_dataframe_config, get_logger
+
+sys.path.insert(0, "./dags/OT214-Python/universidad_f")
 
 default_args = {
     "owner": "alkymer",
@@ -26,7 +27,7 @@ path_university_f = os.path.dirname(__file__)
 path_university_f = str(Path(path_university_f).parents[0])
 
 
-class ETL():
+class ETL:
 
     def __init__(self, sql_paths="/sql/",
                  csv_paths=path_university_f + "/files/",
@@ -38,7 +39,6 @@ class ETL():
         self.query_path = path_university_f + sql_paths
         self.data_path = csv_paths
         self.utils_path = utils_paths
-
 
     def _save_txt(self, df_r):
         self.logger.info("Saving data to txt.")
@@ -108,9 +108,10 @@ class ETL():
         return df
 
     # this function split name in firts_name and last_name
-    def _make_name(self, df, name_column="name", names_columns=["first_name",
-                                                                "last_name"]):
+    def _make_name(self, df, name_column="name", ):
         self.logger.info("Getting names.")
+        names_columns = ["first_name",
+                         "last_name"]
         df[names_columns[0]] = df[name_column].apply(lambda x:
                                                      (x.split(" "))[0])
 
@@ -308,7 +309,7 @@ class ETL():
             self._create_engine()
 
             self.logger.info("Connecting database.")
-            self.connection = self.engine.connect()
+            self.engine.connect()
 
             self._database_status()
 

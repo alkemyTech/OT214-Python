@@ -1,6 +1,5 @@
 import logging
 import logging.config
-import os
 
 import yaml
 
@@ -33,13 +32,13 @@ def get_logger(logger_file="logger.yaml",
             try:
                 log_config = yaml.safe_load(logger_config.read())
                 logging.config.dictConfig(log_config)
-            except Exception:
-                logging.exception("Error loading logger configuration")
+            except Exception as e:
+                logging.exception(f'Error loading logger configuration: {e}')
                 return _getting_default_logger()
             finally:
                 logger_config.close()
-    except Exception:
-        logging.exception("Error, logger's file configuration not found")
+    except Exception as e:
+        logging.exception(f'Error, logger file configuration not found: {e}')
         return _getting_default_logger()
 
     logger = logging.getLogger(logger_name)
