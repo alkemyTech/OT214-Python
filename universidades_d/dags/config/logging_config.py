@@ -12,9 +12,9 @@ def logging_configuration(_path='/logging_config.yml'):
         with open(_path_yml, 'rt') as file:
             config = yaml.safe_load(file.read())
         if config['handlers']['log_handler']['filename'] != _path_log:
-           config['handlers']['log_handler']['filename'] = _path_log
-           with open(_path_yml, 'w') as file_w:
-               file_w.write(str(config))
+            config['handlers']['log_handler']['filename'] = _path_log
+            with open(_path_yml, 'w') as file_w:
+                file_w.write(str(config))
         logging.config.dictConfig(config)
         logger = logging.getLogger('ETL_DAG')
         return logger
