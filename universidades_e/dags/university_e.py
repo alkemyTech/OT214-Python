@@ -186,7 +186,7 @@ with DAG(
 
             # tranformo fecha en edad
             edad = 0
-            f_actual = datetime.datetime.now()
+            f_actual = datetime.now()
 
             for i in range(0, (len(df_a_names_last.index))):
                 f_nacimiento = df_a_names_last.loc[i, 'age']
@@ -325,8 +325,8 @@ with DAG(
 
                 # tranformo fecha en edad
                 edad = 0
-                f_year = datetime.datetime(2003, 1, 1)
-                f_actual = datetime.datetime.now()
+                f_year = datetime(2003, 1, 1)
+                f_actual = datetime.now()
 
                 for i in range(0, (len(df_origin_inter.index))):
                     f_nacimiento = df_origin_inter.loc[i, columna]
