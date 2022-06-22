@@ -5,26 +5,8 @@ import xml.etree.ElementTree as Et
 from collections import Counter
 from datetime import datetime
 from functools import reduce
+from multiprocessing import Pool
 from pathlib import Path
-
-root_path = Path(__file__).parents[1]
-logging_config_path = Path(
-            root_path,
-            'datos_a/config/logging.cfg')
-dataset_path = Path(
-            root_path,
-            '112010 Meta Stack Overflow/posts.xml')    
-
-logging.config.fileConfig(logging_config_path)
-
-logger = logging.getLogger("analyzer")
-
-
-try:
-    data = Et.parse(dataset_path)
-    root = data.getroot()
-except Et.ParseError:
-    logger.error("error al realizar parse de archivo xml")
 
 
 def chunkify(data, number_of_chunks):
@@ -105,13 +87,6 @@ def chunks_mapper_tags(chunk):
     return reduced_chunk
 
 
-data_chunks_tags = chunkify(root, 96)
-mapped_tags = map(chunks_mapper_tags, data_chunks_tags)
-reduced_tags = reduce(reducer_tags, mapped_tags, [])
-logger.info(" Lista del TOP 10 de tags mas utilizados"
-            f"{Counter(reduced_tags).most_common(10)}")
-
-
 def get_values(data):
     '''
     function mapped that receives data an return quantity of
@@ -164,15 +139,6 @@ def chunks_mapper_counter(chunk):
     return reduce(reducer_counter, mapped_chunk)
 
 
-data_chunks_counter = chunkify(root, 96)
-mapped_counter = map(chunks_mapper_counter, data_chunks_counter)
-reduced_counter = reduce(reducer_counter, mapped_counter)
-
-# mean calculation of words and score
-mean_words = reduced_counter[0] / reduced_counter[2]
-mean_score = reduced_counter[1] / reduced_counter[2]
-
-
 def get_coefficients(data):
     '''
     function mapped that receives data an return deltas and
@@ -223,18 +189,6 @@ def chunks_mapper_pearson(chunk):
     '''
     mapped_chunk = map(get_coefficients, chunk)
     return reduce(reducer_pearson, mapped_chunk)
-
-
-data_chunks_pearson = chunkify(root, 96)
-mapped_pearson = map(chunks_mapper_pearson, data_chunks_pearson)
-sumatories_pearson = reduce(reducer_pearson, mapped_pearson)
-
-# the coefficient is calculated with through the equation
-coef_pearson = sumatories_pearson[0] / (
-    (sumatories_pearson[1] * sumatories_pearson[2])**0.5)
-
-logger.info(" Coeficiente de Pearson para verificar relacion"
-            f"entre palabras de post y puntaje {coef_pearson}")
 
 
 def get_questions(data):
@@ -298,12 +252,6 @@ def chunks_mapper_questions(chunk):
     mapped_chunk = map(get_questions, chunk)
     mapped_chunk = filter(None, mapped_chunk)
     return reduce(reducer_chunk_questions, mapped_chunk, [])
-
-
-# generate the information of questions createDate
-data_chunks_questions = chunkify(root, 96)
-mapped_pearson = map(chunks_mapper_questions, data_chunks_questions)
-reduced_questions = reduce(reducer_questions, mapped_pearson, [])
 
 
 def get_answers(data):
@@ -393,11 +341,63 @@ def chunks_mapper_answer_time(chunk):
     return reduce(reducer_chunk_answer_time, mapped_chunk, [])
 
 
-data_chunks_answer_time = chunkify(root, 96)
-mapped_answer_time = map(chunks_mapper_answer_time, data_chunks_answer_time)
-reduced_answer_time = reduce(reducer_answer_time, mapped_answer_time, [])
-# sum of the timedeltas for the calculation of the average
-answer_time_sum = reduce(reducer_answer_time, reduced_answer_time, 0)
+if __name__ == '__main__':
 
-logger.info(" El promedio en dias de respuesta de post es de "
-            f"{(answer_time_sum/(len(reduced_answer_time)))/3600/24}")
+    root_path = Path(__file__).parents[0]
+    logging_config_path = Path(
+            root_path,
+            'datos_a/config/logging.cfg')
+    dataset_path = Path(
+                root_path,
+                '112010 Meta Stack Overflow/posts.xml')
+
+    logging.config.fileConfig(logging_config_path)
+
+    logger = logging.getLogger("analyzer")
+
+    try:
+        data = Et.parse(dataset_path)
+        root = data.getroot()
+    except Et.ParseError:
+        logger.error("error al realizar parse de archivo xml")
+
+    pool = Pool(8)
+
+    # top10 tags calculation
+    data_chunks_tags = chunkify(root, 96)
+    mapped_tags = map(chunks_mapper_tags, data_chunks_tags)
+    reduced_tags = reduce(reducer_tags, mapped_tags, [])
+    logger.info(" Lista del TOP 10 de tags mas utilizados"
+                f"{Counter(reduced_tags).most_common(10)}")
+    data_chunks_counter = chunkify(root, 96)
+    mapped_counter = pool.map(chunks_mapper_counter, data_chunks_counter)
+    reduced_counter = reduce(reducer_counter, mapped_counter)
+
+    # mean calculation of words and score
+    mean_words = reduced_counter[0] / reduced_counter[2]
+    mean_score = reduced_counter[1] / reduced_counter[2]
+    data_chunks_pearson = chunkify(root, 96)
+    mapped_pearson = map(chunks_mapper_pearson, data_chunks_pearson)
+    sumatories_pearson = reduce(reducer_pearson, mapped_pearson)
+
+    # the coefficient is calculated with through the equation
+    coef_pearson = sumatories_pearson[0] / (
+        (sumatories_pearson[1] * sumatories_pearson[2])**0.5)
+
+    logger.info(" Coeficiente de Pearson para verificar relacion"
+                f"entre palabras de post y puntaje {coef_pearson}")
+
+    # generate the information of questions createDate
+    data_chunks_questions = chunkify(root, 96)
+    mapped_pearson = pool.map(chunks_mapper_questions, data_chunks_questions)
+    reduced_questions = reduce(reducer_questions, mapped_pearson, [])
+    data_chunks_answer_time = chunkify(root, 96)
+    mapped_answer_time = map(
+        chunks_mapper_answer_time, data_chunks_answer_time)
+    reduced_answer_time = reduce(
+        reducer_answer_time, mapped_answer_time, [])
+
+    # sum of the timedeltas for the calculation of the average
+    answer_time_sum = reduce(reducer_answer_time, reduced_answer_time, 0)
+    logger.info(" El promedio en dias de respuesta de post es de "
+                f"{(answer_time_sum/(len(reduced_answer_time)))/3600/24}")
