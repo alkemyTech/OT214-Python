@@ -1,4 +1,3 @@
-
 import sys
 import os
 from datetime import datetime, timedelta
@@ -6,11 +5,13 @@ from datetime import datetime, timedelta
 import pandas as pd
 import sqlalchemy
 from airflow import DAG
-from airflow.operators.python_operator import PythonOperator
+from airflow.operators import PythonOperator
 from decouple import config
 
-sys.path.insert(0,"./dags/OT214-Python/universidades_e")
 from dags.config.logging_config import lg_connect, lg_process, lg_send, path
+
+sys.path.insert(0, "./dags/OT214-Python/universidades_e")
+
 
 # dag default arguments and retries
 default_arguments = {
