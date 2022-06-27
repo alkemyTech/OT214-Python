@@ -87,3 +87,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Datasets Big Data
+/112010 Meta Stack Overflow
