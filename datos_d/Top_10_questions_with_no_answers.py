@@ -1,8 +1,8 @@
 import os
-import xml.etree.ElementTree as Et
-from collections import Counter
 from functools import reduce
 from logging.config import logging
+
+from defusedxml.ElementTree import parse
 
 # initialize instance of log for further logging notices
 
@@ -15,7 +15,7 @@ logger = logging.getLogger('Stack Overflow')
 xml_data_filename = 'posts.xml'
 my_tree = ''
 try:
-    my_tree = Et.parse(xml_data_filename)
+    my_tree = parse(xml_data_filename)
 except Exception as error:
     logger.critical(f'could not parse {xml_data_filename}, file not found or missing: {error}')
     raise FileNotFoundError
