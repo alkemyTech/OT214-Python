@@ -8,3 +8,11 @@
 2022/06/14;INFO;root;Analyzing data starting...
 2022/06/14;INFO;root;Analyzing data starting...
 2022/06/14;INFO;root;Analyzing data starting...
+2022/06/30;INFO;Stack Overflow;TOP 10 QUESTIONS WITH NO ANSWER:
+2022/06/30;INFO;Stack Overflow;TOP 10 ACTIVITY TIME QUESTIONS:
+2022/06/30;INFO;Stack Overflow;Relation Ratio Answers - Scores: 2.7566735788837726
+2022/06/30;CRITICAL;Stack Overflow;could not parse posts.xml, file not found or missing: __init__() takes exactly 0 positional arguments (1 given)
+2022/06/30;INFO;Stack Overflow;TOP 10 ACTIVITY TIME QUESTIONS:
+2022/06/30;INFO;Stack Overflow;Relation Ratio Answers - Scores: 2.7566735788837726
+2022/06/30;INFO;Stack Overflow;TOP 10 ACTIVITY TIME QUESTIONS:
+2022/06/30;INFO;Stack Overflow;TOP 10 QUESTIONS WITH NO ANSWER:
