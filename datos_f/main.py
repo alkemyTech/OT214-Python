@@ -1,11 +1,13 @@
-from click import types
-from data_getter import DataGetter
-from mapper import Mapper
-from reducer import Reducer
-from pathlib import Path
 import logging
 import logging.config
 from datetime import datetime
+from pathlib import Path
+
+from click import types
+
+from data_getter import DataGetter
+from mapper import Mapper
+from reducer import Reducer
 
 file_path = Path(__file__).parents[0]
 logger_config = Path(

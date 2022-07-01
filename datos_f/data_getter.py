@@ -1,8 +1,8 @@
-from xml.etree import ElementTree as ET
-import os
 import logging
 import logging.config
+import os
 from pathlib import Path
+from xml.etree import ElementTree as ET
 
 file_path = Path(__file__).parents[0]
 logger_config = Path(

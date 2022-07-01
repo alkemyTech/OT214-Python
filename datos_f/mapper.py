@@ -1,6 +1,6 @@
-from datetime import datetime
 import logging
 import logging.config
+from datetime import datetime
 from pathlib import Path
 
 file_path = Path(__file__).parents[0]
